@@ -1,28 +1,20 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+// Router.js
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import About from '../pages/About/About';
 import Home from '../pages/Home/Home';
 import { ROUTES } from './RouterConfig';
+import Login from '../pages/Auth/Login';
+import PrivateRoute from '../pages/Auth/PrivateRoute';
 
 const Router = () => {
-
-  // eslint-disable-next-line react/prop-types
-  const RouteWithRole = ({ Element }) => {
-    return (
-      <>
-        <Element />
-      </>
-    );
-  }
-
   return (
-    <div>
-      <Routes>
-        <Route exact path={ROUTES.Home} element={<RouteWithRole Element={Home} />}></Route>
-        <Route exact path={ROUTES.About} element={<RouteWithRole Element={About} />}></Route>
-      </Routes>
-    </div>
-  )
-}
+    <Routes>
+      <Route path={ROUTES.Login} element={<Login />} />
+      <Route path={ROUTES.Home} element={<PrivateRoute><Home /></PrivateRoute>} />
+      <Route path={ROUTES.About} element={<PrivateRoute><About /></PrivateRoute>} />
+    </Routes>
+  );
+};
 
-export default Router
+export default Router;

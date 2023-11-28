@@ -17,6 +17,7 @@
   },
   "plugins": ["react", "react-hooks"],
   "rules": {
-    "unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "react/prop-types": "off"
   }
 }
