@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../routes/RouterConfig';
 import axios from '../../config/axios';
-import SideBar from '../../components/layout/side-bar/SideBar';
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -28,9 +27,8 @@ const Home = () => {
 
   return (
     <div className=''>
-
       <div className="text-xl text-[red]">
-        <div className="bg-slate-300 w-full h-full">
+        <div className="bg-slate-300">
           <table className="min-w-full bg-white border border-gray-300">
             <thead>
               <tr>

@@ -8,9 +8,9 @@ const MainLayout = ({ children }) => {
             <div className="fixed left-0 top-0">
                 <SideBar />
             </div>
-            <div className='flex-1 h-screen relative left-[14.625rem]'>
+            <div className='flex flex-col h-screen relative pl-[14.625rem]'>
                 <Header />
-                <div className="bg-slate-700 h-full">
+                <div className="bg-slate-100 flex-1">
                     {children}
                 </div>
 
