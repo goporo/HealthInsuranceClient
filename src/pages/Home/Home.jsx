@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../routes/RouterConfig';
 import axios from '../../config/axios';
+import SideBar from '../../components/layout/side-bar/SideBar';
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -27,6 +28,9 @@ const Home = () => {
 
   return (
     <div className='Home'>
+      <div className="fixed left-0 top-0">
+        <SideBar />
+      </div>
       <div className="text-xl text-[red]">
         <div className="bg-slate-300 w-full h-full">
           <div className="flex flex-row gap-3">
