@@ -1,10 +1,20 @@
 import React, { useState } from 'react'
+import authService from '../../../services/authService';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRightFromBracket, faUser } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
 
 const Header = () => {
     const [isExpand, setIsExpand] = useState(false);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
 
     return (
-        <div className='h-16 flex flex-row justify-between items-center px-6'>
+
+        <header className='z-10 h-16 flex flex-row justify-between items-center px-6'>
             <div></div>
             <div
                 className="relative cursor-pointer"
@@ -12,35 +22,42 @@ const Header = () => {
                 onMouseLeave={() => setIsExpand(false)}
             >
                 <img
-                    className="[60px] w-[60px] rounded-full object-cover"
+                    className="h-[48px] w-[48px] rounded-full object-cover"
                     src={"https://creazilla-store.fra1.digitaloceanspaces.com/icons/7912768/avatar-icon-md.png"}
                     alt="avatar"
                 />
-                {/* {isExpand && (
-                    <div className="absolute top-full -right-6 w-44 pt-[26px] transition-all">
+                {isExpand && (
+                    <div className="absolute top-full -right-4 w-44 pt-[14px] transition-all">
                         <div className="relative shadow-[0_4px_16px_rgba(0,0,0,0.1)]">
                             <div className="absolute bottom-full right-[20%] text-md leading-[0.7] text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.1)]">
                                 &#x25B2;
                             </div>
-                            <div className="relative bg-white p-4">
+
+                            <div className="relative bg-white">
+                                {/* profile */}
                                 <div
                                     role="button"
-                                    onClick={navigateUserInforPage}
-                                    className="mb-4 flex items-center"
+                                    onClick={() => navigate("/profile")}
+                                    className="hover:bg-slate-100 p-4 flex items-center"
                                 >
                                     <div className="mr-2 w-4">
-                                        <SVGUser></SVGUser>
+                                        <FontAwesomeIcon icon={faUser} />
+
                                     </div>
                                     <p>Profile Details</p>
                                 </div>
-                                <div className="flex items-center">
+                                {/* log out */}
+                                <div className="hover:bg-slate-100 p-4 flex items-center"
+                                    onClick={() => {
+                                        authService.handleLogout(dispatch);
+
+                                    }}
+                                >
                                     <div className="mr-2 w-4">
-                                        <SVGSignOut></SVGSignOut>
+                                        <FontAwesomeIcon icon={faRightFromBracket} />
                                     </div>
                                     <p
-                                        onClick={() => {
-                                            authService.handleLogout();
-                                        }}
+
                                     >
                                         Log Out
                                     </p>
@@ -48,9 +65,9 @@ const Header = () => {
                             </div>
                         </div>
                     </div>
-                )} */}
+                )}
             </div>
-        </div>
+        </header>
     )
 }
 

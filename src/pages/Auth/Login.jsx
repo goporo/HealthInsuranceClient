@@ -9,6 +9,7 @@ import { LOCAL_STORAGE } from '../../utils/storageConstants';
 import { jwtDecode } from "jwt-decode";
 import UiSpinning from '../../components/ui/UiSpinning/UiSpinning';
 import UiButton from '../../components/ui/UiButton/UiButton';
+import authService from '../../services/authService';
 
 const Login = () => {
     const [onLoadingSubmit, setOnLoadingSubmit] = useState(false);
@@ -42,22 +43,16 @@ const Login = () => {
             // sample token
             const token = 'eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTcwMTM1OTAwNiwiaWF0IjoxNzAxMzU5MDA2fQ.8_ehOUhNWjR9haBUQnysfmDGAj68ilqCh22-32nBTP8';
 
+            const user = {}
 
-
-            localStorage.setItem(LOCAL_STORAGE.JWT_TOKEN, token);
             if (isAccessTokenValid(token)) {
                 setTimeout(() => {
 
-                    dispatch(loginSuccess());
+                    authService.handleLogin(dispatch, user, token);
                     navigate("/");
                     setOnLoadingSubmit(false);
 
                 }, 1000);
-            }
-            else {
-                window?.localStorage?.removeItem(LOCAL_STORAGE.REMEMBER_ME);
-                window?.localStorage?.removeItem(LOCAL_STORAGE.JWT_TOKEN);
-
             }
 
 

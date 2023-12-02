@@ -5,7 +5,7 @@ import SideBar from '../side-bar/SideBar'
 const MainLayout = ({ children }) => {
     return (
         <div className=''>
-            <div className="fixed left-0 top-0">
+            <div className="fixed left-0 top-0 z-10">
                 <SideBar />
             </div>
             <div className='flex flex-col h-screen relative pl-[14.625rem]'>
