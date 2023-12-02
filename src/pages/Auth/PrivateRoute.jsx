@@ -7,19 +7,17 @@ import MainLayout from '../../components/layout/main-layout/MainLayout';
 import authService from '../../services/authService';
 
 const PrivateRoute = ({ children }) => {
-    const dispatch = useDispatch();
 
-    useEffect(() => {
-        authService.handleAutoLogin(dispatch);
-    }, [dispatch]);
 
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
-    return isLoggedIn ?
+    return isLoggedIn ? (
         <MainLayout>
             {children}
         </MainLayout>
-        : <Navigate to={ROUTES.Login} />;
+    ) : (
+        <Navigate to={ROUTES.Login} />
+    );
 };
 
 export default PrivateRoute;
