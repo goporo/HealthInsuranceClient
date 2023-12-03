@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { ROUTES } from '../../../routes/RouterConfig';
 
 
 const Header = () => {
@@ -37,7 +38,7 @@ const Header = () => {
                                 {/* profile */}
                                 <div
                                     role="button"
-                                    onClick={() => navigate("/profile")}
+                                    onClick={() => navigate(ROUTES.Profile)}
                                     className="hover:bg-slate-100 p-4 flex items-center"
                                 >
                                     <div className="mr-2 w-4">
@@ -50,7 +51,7 @@ const Header = () => {
                                 <div className="hover:bg-slate-100 p-4 flex items-center"
                                     onClick={() => {
                                         authService.handleLogout(dispatch);
-
+                                        navigate(ROUTES.Login)
                                     }}
                                 >
                                     <div className="mr-2 w-4">

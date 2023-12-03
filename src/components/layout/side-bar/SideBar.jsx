@@ -1,26 +1,29 @@
 import clsx from 'clsx';
 import React from 'react'
-import { Link, Router, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 const navItems = [
     {
         title: 'Dashboard',
-        //   Icon: SVGHome,
+        icon: faHouse,
         path: '/',
     },
     {
         title: 'About',
-        //   Icon: SVGFolderCode,
+        icon: faHouse,
         path: '/about',
     },
     {
         title: 'History',
-        //   Icon: SVGClock,
+        icon: faHouse,
         path: '/history',
     },
     {
         title: 'Policy',
-        //   Icon: SVGInformation,
+        icon: faHouse,
         path: '/policy'
     },
 ];
@@ -33,9 +36,10 @@ const NavItem = (props) => {
     return (
         <Link to={path || '/#'}>
             <div className={clsx(
-                'flex h-11 justify-center items-center cursor-pointer hover:bg-blue-primary hover:text-white',
+                'flex h-11 justify-start gap-4 px-12 items-center cursor-pointer hover:bg-blue-primary hover:text-white',
                 isActive ? activeClassName : notActiveClassName
             )}>
+                <FontAwesomeIcon icon={icon} className={`h-5 w-5 leading-[0px] ${isActive ? 'text-white' : 'text-black'}`} />
                 <div className=" ">{title}</div>
             </div>
         </Link>
@@ -67,7 +71,7 @@ const SideBar = () => {
             </div>
             {navItems.map((item, index) => {
                 const isActive = CheckIsActive(item.path, item.rootPath);
-                return (<NavItem key={index} isActive={isActive} path={item.path} title={item.title} />)
+                return (<NavItem key={index} isActive={isActive} path={item.path} title={item.title} icon={item.icon} />)
             }
             )}
         </nav>

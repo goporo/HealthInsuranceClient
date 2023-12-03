@@ -3,13 +3,11 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import AuthWrapper from './AuthWrapper';
-import axios from 'axios';
-import { loginSuccess } from '../../app/authSlice';
-import { LOCAL_STORAGE } from '../../utils/storageConstants';
 import { jwtDecode } from "jwt-decode";
 import UiSpinning from '../../components/ui/UiSpinning/UiSpinning';
 import UiButton from '../../components/ui/UiButton/UiButton';
 import authService from '../../services/authService';
+import { ROUTES } from '../../routes/RouterConfig';
 
 const Login = () => {
     const [onLoadingSubmit, setOnLoadingSubmit] = useState(false);
@@ -49,7 +47,7 @@ const Login = () => {
                 setTimeout(() => {
 
                     authService.handleLogin(dispatch, user, token);
-                    navigate("/");
+                    navigate(ROUTES.Home);
                     setOnLoadingSubmit(false);
 
                 }, 1000);
