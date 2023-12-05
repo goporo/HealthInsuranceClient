@@ -60,6 +60,12 @@ const Login = () => {
         } catch (error) {
             console.error('Login failed', error);
         }
+
+        finally {
+            // This block will be executed whether an error occurred or not
+            // will add error display later
+            setOnLoadingSubmit(false);
+        }
     };
 
 
