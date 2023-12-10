@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../routes/RouterConfig';
 import axios from '../../config/axios';
+import UiButton from 'components/common/ui/UiButton/UiButton';
+import UiModal from 'components/common/ui/UiModal/UiModal';
 
 const Home = () => {
   const [users, setUsers] = useState([]);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,8 +28,15 @@ const Home = () => {
     navigate(dir);
   };
 
+  const handleCloseModal = () => {
+    setIsModalVisible(false);
+    console.log("closed!");
+  }
+
+
   return (
     <div className=''>
+      <UiModal visible={isModalVisible} onConfirm={handleCloseModal} onclose={handleCloseModal} onCancel={handleCloseModal} headerTitle="Modal Title">Test modal</UiModal>
       <div className="text-xl text-[red]">
         <div className="bg-slate-300">
           <table className="min-w-full bg-white border border-gray-300">
@@ -61,6 +71,11 @@ const Home = () => {
       >
         Go To About
       </button>
+      <UiButton className="bg-blue-500 text-white px-4 py-2 rounded"
+        onClick={() => { setIsModalVisible(!isModalVisible) }}
+      >
+        show modal
+      </UiButton>
     </div>
   );
 };
