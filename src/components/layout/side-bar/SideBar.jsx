@@ -65,7 +65,7 @@ const SideBar = () => {
 
     return (
         //bg-gradient-to-br from-blue-light to-blue-darker
-        <nav className="w-[14.625rem] h-screen">
+        <nav className="w-[14.625rem] h-screen shadow-sm">
             <div>
                 <img src="/assets/images/logo.png" alt="logo" />
             </div>

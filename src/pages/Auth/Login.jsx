@@ -40,7 +40,6 @@ const Login = () => {
             // Send login request to your backend API
             const response = await api.post('/authentication/login', data);
 
-            console.log(response);
 
             if (response.status !== 200) {
                 throw new Error('Login failed');

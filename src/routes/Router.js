@@ -7,6 +7,7 @@ import { ROUTES } from './RouterConfig';
 import Login from '../pages/Auth/Login';
 import ProtectedRoute from '../pages/Auth/ProtectedRoute';
 import NotFound from '../pages/404/NotFound';
+import ProductDetail from 'pages/Product/ProductDetail';
 
 const Router = () => {
   return (
@@ -19,6 +20,7 @@ const Router = () => {
       <Route element={<ProtectedRoute />}>
         <Route path={ROUTES.Home} element={<Home />} />
         <Route path={ROUTES.About} element={<About />} />
+        {/* <Route path={ROUTES.Product} element={<ProductDetail />} /> */}
 
       </Route>
 
