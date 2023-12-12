@@ -4,8 +4,8 @@ import SideBar from '../side-bar/SideBar'
 
 const MainLayout = ({ children }) => {
     return (
-        <>
-            <div className="fixed left-0 top-0 z-10 h-screen">
+        <div className='bg-slate-100 h-full min-h-screen'>
+            <div className="fixed left-0 top-0 z-10">
                 <SideBar />
             </div>
 
@@ -13,15 +13,14 @@ const MainLayout = ({ children }) => {
                 <div className="fixed top-0 w-[calc(100vw-14.625rem)]">
                     <Header />
                 </div>
-                <div className="bg-slate-100 flex-1 pt-16 h-screen">
-                    <div className="p-4">
-
+                <div className="flex-1 pt-16">
+                    <div className="py-4 px-2">
                         {children}
                     </div>
                 </div>
 
             </div>
-        </>
+        </div>
     )
 }
 

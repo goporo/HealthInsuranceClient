@@ -1,11 +1,12 @@
+import UiSpinning from 'components/common/ui/UiSpinning/UiSpinning';
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const renderProductItem = (product) => {
-    const { id, name, avatar } = product;
+const renderProductItem = (product, idx) => {
+    const { productID, name, avatar } = product;
     return (
-        <Link to={`product/${id}`}>
-            <div className='h-28 bg-white flex flex-row p-4 gap-2'>
+        <Link key={idx} to={`product/${productID}`}>
+            <div className='h-28 bg-white flex flex-row p-4 gap-2 min-w-[250px]'>
                 <div className='flex-shrink-0'>
                     <img src={avatar} alt="logo" className='h-16 min-w-16 min-w-16' />
                 </div>
@@ -22,15 +23,18 @@ const renderProductItem = (product) => {
 
 const ProductItem = ({
     response,
-    fetchState = false,
+    fetchLoading = false,
 }) => {
-    // const { pathname } = useRouter();
 
     return (
         <>
-            {response.map((product, idx) =>
-                renderProductItem(product, idx)
-            )}
+            {
+                !fetchLoading ?
+                    response.map((product, idx) =>
+                        renderProductItem(product, idx)
+                    )
+                    : <UiSpinning />
+            }
         </>
     )
 }

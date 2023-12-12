@@ -1,7 +1,7 @@
 export const ROUTES = {
     Login: '/login',
     Home: '/',
-    About: '/about',
+    MyInsurance: '/my-insurance',
     Profile: '/profile',
-    Product: '/product'
+    Product: '/product/:productId'
 }
