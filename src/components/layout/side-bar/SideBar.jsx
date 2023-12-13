@@ -118,33 +118,33 @@ const SideBar = () => {
                         return <NavItem key={index} isActive={isActive} paths={item.paths} items={item.items} title={item.title} icon={item.icon} handleNavClick={() => handleNavClick(item)} />;
                     })}
                 </nav>
+                <AnimatePresence>
+                    {isNavExpand && activeItem && (
+                        <motion.div
+                            className="w-full px-2 bg-white pt-[46px] pb-[40px] shadow-sm origin-top grid lg:grid-cols-4 gap-y-8"
+                            initial={{ scaleY: 0 }}
+                            animate={{ scaleY: 1 }}
+                            exit={{ scaleY: 0 }}
+                            transition={{ duration: ExpandTransitionTime / 1000, ease: 'easeInOut' }}
+                        >
+                            {activeItem.items.map((item, idx) => {
+                                return (
+                                    <Link key={idx} to={item.path}>
+                                        <div className=" w-[300px] px-4 flex flex-row items-end flex-1">
+                                            <div className='text-[22px]'>
+                                                {item.title}
+                                            </div>
+                                            <FontAwesomeIcon icon={faChevronRight} className='w-[16px] pb-2 pr-1 text-primary' />
+                                        </div>
+
+                                    </Link>
+                                )
+                            })}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </motion.div>
 
-            <AnimatePresence>
-                {isNavExpand && activeItem && (
-                    <motion.div
-                        className="w-full px-2 bg-white pt-[46px] pb-[40px] shadow-sm origin-top grid lg:grid-cols-4 gap-y-8"
-                        initial={{ scaleY: 0 }}
-                        animate={{ scaleY: 1 }}
-                        exit={{ scaleY: 0 }}
-                        transition={{ duration: ExpandTransitionTime / 1000, ease: 'easeInOut' }}
-                    >
-                        {activeItem.items.map((item, idx) => {
-                            return (
-                                <Link key={idx} to={item.path}>
-                                    <div className=" w-[300px] px-4 flex flex-row items-end flex-1">
-                                        <div className='text-[22px]'>
-                                            {item.title}
-                                        </div>
-                                        <FontAwesomeIcon icon={faChevronRight} className='w-[16px] pb-2 pr-1 text-primary' />
-                                    </div>
-
-                                </Link>
-                            )
-                        })}
-                    </motion.div>
-                )}
-            </AnimatePresence>
         </div>
     );
 };
