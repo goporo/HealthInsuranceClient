@@ -11,7 +11,7 @@ const UiSpinning = ({
             <svg
                 role="status"
                 className={clsx(
-                    'mr-2 inline h-10 w-10 animate-spin fill-blue-primary text-black-primary/50',
+                    'mr-2 inline h-10 w-10 animate-spin fill-blue-500 text-black-primary/50',
                     spinningClassName
                 )}
                 viewBox="0 0 100 101"

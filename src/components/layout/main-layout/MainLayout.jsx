@@ -1,20 +1,18 @@
 import React from 'react'
 import Header from '../header/Header'
-import SideBar from '../side-bar/SideBar'
 
 const MainLayout = ({ children }) => {
     return (
-        <div className='bg-slate-100 h-full min-h-screen'>
-            <div className="fixed left-0 top-0 z-10">
-                <SideBar />
-            </div>
+        <div className='bg-slate-primary h-full min-h-screen'>
 
-            <div className='pl-[14.625rem]'>
-                <div className="fixed top-0 w-[calc(100vw-14.625rem)]">
+
+            <div className=''>
+                <div className="fixed top-0 w-screen">
                     <Header />
                 </div>
-                <div className="flex-1 pt-16">
-                    <div className="py-4 px-2">
+
+                <div className="flex-1 pt-[161px] flex flex-col items-center my-2">
+                    <div className="">
                         {children}
                     </div>
                 </div>

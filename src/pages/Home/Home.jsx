@@ -34,9 +34,13 @@ const Home = () => {
 
   return (
     <div className=''>
-      <div className='p-12'>
+      <div className='px-12 -mt-12'>
         <div className="flex flex-col gap-6">
-          <ProductItem response={response} fetchLoading={fetchLoading} />
+          {/* <ProductItem response={response} fetchLoading={fetchLoading} /> */}
+          <img src="/assets/images/banner/khi-can-minh-co-nhau.jpg" alt="banner" className='' />
+          <img src="/assets/images/banner/khi-can-minh-co-nhau.jpg" alt="banner" className='' />
+          <img src="/assets/images/banner/khi-can-minh-co-nhau.jpg" alt="banner" className='' />
+
         </div>
       </div>
     </div>

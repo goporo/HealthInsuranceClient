@@ -184,7 +184,7 @@ const UiModal = ({
                                             title={confirmTitle}
                                             className={clsx(
                                                 confirmClassName,
-                                                'bg-blue-primary text-white'
+                                                'bg-primary text-white'
                                             )}
                                         />
                                     </React.Fragment>

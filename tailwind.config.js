@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primary: '#ED1B2E',
         blue: {
           primary: '#2DA3CA',
           light: '#2DA3CA',
@@ -18,10 +19,13 @@ module.exports = {
         },
         green: {
           primary: '#355E3B',
+        },
+        slate: {
+          primary: '#f7f7f7'
         }
-
-      }
+      },
     },
+
   },
   plugins: [],
 }
