@@ -5,9 +5,8 @@ const MainLayout = ({ children }) => {
     return (
         <div className='bg-slate-primary h-full min-h-screen'>
 
-
             <div className=''>
-                <div className="fixed top-0 w-screen">
+                <div className="fixed top-0 w-screen z-[999]">
                     <Header />
                 </div>
 

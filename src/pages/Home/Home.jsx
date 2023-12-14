@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getProductsRequest } from 'requests/product.request';
-import ProductItem from 'components/section/product/ProductItem';
+import WipeImage from 'components/animation/WipeImage';
 
 const Home = () => {
   const [response, setResponse] = useState([]);
@@ -32,16 +32,22 @@ const Home = () => {
 
 
 
-  return (
-    <div className=''>
-      <div className='px-12 -mt-12'>
-        <div className="flex flex-col gap-6">
-          {/* <ProductItem response={response} fetchLoading={fetchLoading} /> */}
-          <img src="/assets/images/banner/khi-can-minh-co-nhau.jpg" alt="banner" className='' />
-          <img src="/assets/images/banner/khi-can-minh-co-nhau.jpg" alt="banner" className='' />
-          <img src="/assets/images/banner/khi-can-minh-co-nhau.jpg" alt="banner" className='' />
 
-        </div>
+  return (
+    <div className='px-12 -mt-12'>
+      <div className="flex flex-col gap-6">
+        {/* <ProductItem response={response} fetchLoading={fetchLoading} /> */}
+        <WipeImage >
+          <img src="/assets/images/banner/khi-can-minh-co-nhau.jpg" alt="banner" className='' />
+        </WipeImage>
+        <WipeImage >
+          <img src="/assets/images/banner/khi-can-minh-co-nhau.jpg" alt="banner" className='' />
+        </WipeImage>
+        <WipeImage >
+          <img src="/assets/images/banner/khi-can-minh-co-nhau.jpg" alt="banner" className='' />
+        </WipeImage>
+
+
       </div>
     </div>
   );

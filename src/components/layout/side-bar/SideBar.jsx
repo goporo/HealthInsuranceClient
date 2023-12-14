@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faRightFromBracket, faUser, faX } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import { ROUTES } from 'routes/RouterConfig';
@@ -113,10 +113,9 @@ const NavItem = (props) => {
     );
 };
 
-const SideBar = () => {
+const SideBar = ({ isScrollAtTop, setIsScrollAtTop }) => {
     const [activeItem, setActiveItem] = useState(null);
     const [isNavExpand, setIsNavExpand] = useState(false);
-    const [isScrollAtTop, setIsScrollAtTop] = useState(true);
     const controls = useAnimation();
 
     useEffect(() => {
@@ -180,7 +179,7 @@ const SideBar = () => {
                 transition={commonTransition}
                 animate={controls}
             >
-                <nav className={clsx('justify-center px-[33px] z-10 gap-4 rounded-lg relative min-h-[69px] shadow-sm flex-row flex transition-all duration-300 ease-in-out', isScrollAtTop ? 'bg-primary text-white' : 'bg-white text-black-primary')}>
+                <nav className={clsx('justify-center px-[33px] gap-4 rounded-lg relative min-h-[69px] shadow-sm flex-row flex transition-all duration-300 ease-in-out', isScrollAtTop ? 'bg-primary text-white' : 'bg-white text-black-primary')}>
                     {navItems.map((item, index) => {
                         const isActive = CheckIsActive(item);
                         return <NavItem key={index} isActive={isActive} paths={item.paths} items={item.items} title={item.title} icon={item.icon} handleNavClick={() => handleNavClick(item)} />;

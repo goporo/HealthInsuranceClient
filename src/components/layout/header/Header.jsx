@@ -9,21 +9,26 @@ import { useDispatch } from 'react-redux';
 import { ROUTES } from '../../../routes/RouterConfig';
 import SideBar from '../side-bar/SideBar';
 import UiButton from 'components/common/ui/UiButton/UiButton';
+import clsx from 'clsx';
 
 const Header = () => {
-    const [isExpand, setIsExpand] = useState(false);
     const navigate = useNavigate();
     const controls = useAnimation();
     const dispatch = useDispatch();
+    const [isScrollAtTop, setIsScrollAtTop] = useState(true);
+
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrollThreshold = 5;
-
-            if (window.scrollY > scrollThreshold) {
+            console.log(window.scrollY);
+            if (window.scrollY > 0) {
+                setIsScrollAtTop(false);
                 controls.start({ y: -92 });
+
             } else {
+                setIsScrollAtTop(true);
                 controls.start({ y: 0 });
+
             }
         };
 
@@ -35,10 +40,13 @@ const Header = () => {
         };
     }, [controls]);
 
+
+
     return (
         <motion.div animate={controls}>
-
-            <header className='z-10 h-[126px]  bg-white flex flex-col justify-start items-center px-6 shadow-[0_0_64px_rgba(0,0,0,.08)]'>
+            <header className={clsx(' bg-white flex flex-col justify-start items-center px-6 shadow-[0_0_64px_rgba(0,0,0,.08)]',
+                isScrollAtTop ? 'h-[126px]' : 'h-[34px]'
+            )}>
                 <div className='min-w-[1200px] max-w-[1200px] min-h-[92px] flex flex-row justify-between items-center'>
                     <Link to={ROUTES.Home} className='flex flex-row gap-[2px]'>
                         <img src="/assets/images/logo.png" alt="logo" className='w-fit h-12' />
@@ -81,7 +89,7 @@ const Header = () => {
 
                     </div>
                 </div>
-                <SideBar className='' />
+                <SideBar isScrollAtTop={isScrollAtTop} setIsScrollAtTop={setIsScrollAtTop} />
             </header>
         </motion.div>
     );
