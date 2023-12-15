@@ -1,4 +1,3 @@
-import { useDispatch } from 'react-redux'
 import { loginSuccess, logoutSuccess } from '../app/authSlice'
 import { LOCAL_STORAGE } from '../utils/storageConstants'
 
