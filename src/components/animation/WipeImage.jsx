@@ -1,19 +1,19 @@
-import { motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
+import { motion, useAnimation } from 'framer-motion'
+import React, { useEffect } from 'react'
 
 const WipeImage = ({ children }) => {
-  const controls = useAnimation();
+  const controls = useAnimation()
 
   const overlayAnimation = {
-    x: ["0%", "100%"],
+    x: ['0%', '100%'],
     transition: {
       duration: 0.8,
     },
-  };
+  }
 
   useEffect(() => {
-    controls.start(overlayAnimation);
-  }, [controls]);
+    controls.start(overlayAnimation)
+  }, [controls])
 
   return (
     <div className="relative overflow-hidden">
@@ -24,7 +24,7 @@ const WipeImage = ({ children }) => {
       />
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default WipeImage;
+export default WipeImage

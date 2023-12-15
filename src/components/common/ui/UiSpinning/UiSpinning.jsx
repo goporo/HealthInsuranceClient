@@ -1,13 +1,13 @@
-import React from "react";
-import { twMerge } from "tailwind-merge";
+import React from 'react'
+import { twMerge } from 'tailwind-merge'
 
-const UiSpinning = ({ wrapClassName = "", spinningClassName = "" }) => {
+const UiSpinning = ({ wrapClassName = '', spinningClassName = '' }) => {
   return (
-    <div className={twMerge("text-center", wrapClassName)}>
+    <div className={twMerge('text-center', wrapClassName)}>
       <svg
         role="status"
         className={twMerge(
-          "mr-2 inline h-10 w-10 animate-spin fill-primary text-black-primary/50",
+          'mr-2 inline h-10 w-10 animate-spin fill-primary text-black-primary/50',
           spinningClassName,
         )}
         viewBox="0 0 100 101"
@@ -24,7 +24,7 @@ const UiSpinning = ({ wrapClassName = "", spinningClassName = "" }) => {
         />
       </svg>
     </div>
-  );
-};
+  )
+}
 
-export default UiSpinning;
+export default UiSpinning

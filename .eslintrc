@@ -24,5 +24,6 @@
     "react/prop-types": "off",
     "react-hooks/rules-of-hooks": "off",
     "no-constant-condition": "off"
+
   }
 }

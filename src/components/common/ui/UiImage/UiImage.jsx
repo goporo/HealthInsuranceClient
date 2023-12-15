@@ -1,5 +1,5 @@
-import React from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const UiImage = ({ src, alt, height, width }) => (
   <div>
@@ -10,6 +10,6 @@ const UiImage = ({ src, alt, height, width }) => (
       width={width}
     />
   </div>
-);
+)
 
-export default UiImage;
+export default UiImage

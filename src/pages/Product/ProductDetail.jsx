@@ -1,46 +1,48 @@
-import UiButton from "components/common/ui/UiButton/UiButton";
-import UiModal from "components/common/ui/UiModal/UiModal";
-import UiSpinning from "components/common/ui/UiSpinning/UiSpinning";
-import NotFound from "pages/404/NotFound";
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getProductDetailRequest } from "requests/product.request";
+import UiButton from 'components/common/ui/UiButton/UiButton'
+import UiModal from 'components/common/ui/UiModal/UiModal'
+import UiSpinning from 'components/common/ui/UiSpinning/UiSpinning'
+import NotFound from 'pages/404/NotFound'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { getProductDetailRequest } from 'requests/product.request'
 
 const ProductDetail = () => {
-  const [response, setResponse] = useState([]);
-  const [fetchLoading, setFetchLoading] = useState(false);
-  const [fetchError, setFetchError] = useState(false);
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [response, setResponse] = useState([])
+  const [fetchLoading, setFetchLoading] = useState(false)
+  const [fetchError, setFetchError] = useState(false)
+  const [isModalVisible, setIsModalVisible] = useState(false)
 
-  const { productId } = useParams();
+  const { productId } = useParams()
 
   useEffect(() => {
     const handleFetchProjectDetail = async () => {
-      if (fetchLoading) return;
-      setFetchLoading(true);
+      if (fetchLoading) return
+      setFetchLoading(true)
       try {
-        const fetchResult = await getProductDetailRequest({ id: productId });
-        const data = fetchResult?.data;
-        setResponse(data);
+        const fetchResult = await getProductDetailRequest({
+          id: productId,
+        })
+        const data = fetchResult?.data
+        setResponse(data)
       } catch (error) {
-        console.log(error);
-        setFetchError(true);
+        console.log(error)
+        setFetchError(true)
       } finally {
-        setFetchLoading(false);
+        setFetchLoading(false)
       }
-    };
+    }
 
-    handleFetchProjectDetail();
+    handleFetchProjectDetail()
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [productId]);
+  }, [productId])
 
   const handleCloseModal = () => {
-    setIsModalVisible(false);
-  };
+    setIsModalVisible(false)
+  }
 
   // temp return in case product not found
-  if (fetchError) return <NotFound />;
+  if (fetchError) return <NotFound />
 
   return (
     <>
@@ -61,7 +63,7 @@ const ProductDetail = () => {
           <div className="flex justify-center flex-row">
             <UiButton
               onClick={() => {
-                setIsModalVisible(!isModalVisible);
+                setIsModalVisible(!isModalVisible)
               }}
             >
               Enroll Now
@@ -72,7 +74,7 @@ const ProductDetail = () => {
         <UiSpinning />
       )}
     </>
-  );
-};
+  )
+}
 
-export default ProductDetail;
+export default ProductDetail

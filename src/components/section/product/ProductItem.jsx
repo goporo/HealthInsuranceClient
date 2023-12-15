@@ -1,9 +1,9 @@
-import UiSpinning from "components/common/ui/UiSpinning/UiSpinning";
-import React from "react";
-import { Link } from "react-router-dom";
+import UiSpinning from 'components/common/ui/UiSpinning/UiSpinning'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 const renderProductItem = (product, idx) => {
-  const { productID, name, avatar } = product;
+  const { productID, name, avatar } = product
   return (
     <Link key={idx} to={`product/${productID}`}>
       <div className="h-28 bg-white flex flex-row p-4 gap-2 min-w-[250px]">
@@ -11,7 +11,7 @@ const renderProductItem = (product, idx) => {
           <img src={avatar} alt="logo" className="h-16 min-w-16 min-w-16" />
         </div>
         <div className="">
-          <div className="text-lg font-bold">{name ?? "Life Vantage"}</div>
+          <div className="text-lg font-bold">{name ?? 'Life Vantage'}</div>
           <p className="line-clamp-2">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
             modi eligendi blanditiis facere distinctio reiciendis, inventore
@@ -21,8 +21,8 @@ const renderProductItem = (product, idx) => {
         </div>
       </div>
     </Link>
-  );
-};
+  )
+}
 
 const ProductItem = ({ response, fetchLoading = false }) => {
   return (
@@ -33,7 +33,7 @@ const ProductItem = ({ response, fetchLoading = false }) => {
         <UiSpinning />
       )}
     </>
-  );
-};
+  )
+}
 
-export default ProductItem;
+export default ProductItem

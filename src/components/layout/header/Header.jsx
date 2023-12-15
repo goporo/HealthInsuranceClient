@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import React, { useState, useEffect } from 'react'
+import { motion, AnimatePresence, useAnimation } from 'framer-motion'
 
-import authService from "../../../services/authService";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import authService from '../../../services/authService'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faBagShopping,
   faCartShopping,
@@ -10,46 +10,46 @@ import {
   faPhone,
   faRightFromBracket,
   faUser,
-} from "@fortawesome/free-solid-svg-icons";
-import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { ROUTES } from "../../../routes/RouterConfig";
-import SideBar from "../side-bar/SideBar";
-import UiButton from "components/common/ui/UiButton/UiButton";
-import { twMerge } from "tailwind-merge";
+} from '@fortawesome/free-solid-svg-icons'
+import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { ROUTES } from '../../../routes/RouterConfig'
+import SideBar from '../side-bar/SideBar'
+import UiButton from 'components/common/ui/UiButton/UiButton'
+import { twMerge } from 'tailwind-merge'
 
 const Header = () => {
-  const navigate = useNavigate();
-  const controls = useAnimation();
-  const dispatch = useDispatch();
-  const [isScrollAtTop, setIsScrollAtTop] = useState(true);
+  const navigate = useNavigate()
+  const controls = useAnimation()
+  const dispatch = useDispatch()
+  const [isScrollAtTop, setIsScrollAtTop] = useState(true)
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log(window.scrollY);
+      console.log(window.scrollY)
       if (window.scrollY > 0) {
-        setIsScrollAtTop(false);
-        controls.start({ y: -92 });
+        setIsScrollAtTop(false)
+        controls.start({ y: -92 })
       } else {
-        setIsScrollAtTop(true);
-        controls.start({ y: 0 });
+        setIsScrollAtTop(true)
+        controls.start({ y: 0 })
       }
-    };
+    }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll)
 
     // Cleanup the event listener when the component is unmounted
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [controls]);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [controls])
 
   return (
     <motion.div animate={controls}>
       <header
         className={twMerge(
-          " bg-white flex flex-col justify-start items-center px-6 shadow-[0_0_64px_rgba(0,0,0,.08)]",
-          isScrollAtTop ? "h-[126px]" : "h-[34px]",
+          'bg-white flex flex-col justify-start items-center px-6 shadow-[0_0_64px_rgba(0,0,0,.08)]',
+          isScrollAtTop ? 'h-[126px]' : 'h-[34px]',
         )}
       >
         <div className="min-w-[1200px] max-w-[1200px] min-h-[92px] flex flex-row justify-between items-center">
@@ -89,20 +89,20 @@ const Header = () => {
                 <UiButton
                   className="bg-white w-[110px] p-[5px] border-[2px] border-[#e5eaef] rounded-full italic font-bold text-sm"
                   onClick={() => {
-                    navigate(ROUTES.Login);
+                    navigate(ROUTES.Login)
                   }}
                 >
-                  {"Đăng nhập"}
+                  {'Đăng nhập'}
                 </UiButton>
               ) : (
                 <UiButton
                   className="bg-white w-[110px] p-[5px] border-[2px] border-[#e5eaef] rounded-full italic font-bold text-sm"
                   onClick={() => {
-                    authService.handleLogout(dispatch);
-                    navigate(ROUTES.Login);
+                    authService.handleLogout(dispatch)
+                    navigate(ROUTES.Login)
                   }}
                 >
-                  {"Đăng xuất"}
+                  {'Đăng xuất'}
                 </UiButton>
               )}
             </div>
@@ -114,7 +114,7 @@ const Header = () => {
         />
       </header>
     </motion.div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

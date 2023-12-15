@@ -1,11 +1,11 @@
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import UiButton from "components/common/ui/UiButton/UiButton";
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { ROUTES } from "routes/RouterConfig";
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import UiButton from 'components/common/ui/UiButton/UiButton'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { ROUTES } from 'routes/RouterConfig'
 
 const NotFound = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   return (
     <div className="flex flex-col gap-12 items-center justify-center h-screen bg-gray-100">
@@ -26,7 +26,7 @@ const NotFound = () => {
         Back to home
       </UiButton>
     </div>
-  );
-};
+  )
+}
 
-export default NotFound;
+export default NotFound
