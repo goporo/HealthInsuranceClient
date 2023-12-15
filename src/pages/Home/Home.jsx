@@ -88,7 +88,7 @@ const Home = () => {
           transition={{
             duration: .75,
             ease: 'easeInOut',
-            delay: .5,
+            delay: 1,
           }}
           animate={{ y: [200, -20], opacity: [0, 1.00] }}
           whileHover={{ scale: 1.1 }}

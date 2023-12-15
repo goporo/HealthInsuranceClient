@@ -13,7 +13,6 @@ const MainLayout = ({ children }) => {
         <div className="flex-1 pt-[161px] flex flex-col items-center my-2">
           <div className="">{children}</div>
         </div>
-
         <Footer />
       </div>
     </div>

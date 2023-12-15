@@ -1,4 +1,6 @@
+import UiImage from 'components/common/ui/UiImage/UiImage'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const footerItems = [
   {
@@ -71,7 +73,7 @@ const footerItems = [
 const Footer = () => {
   return (
     <div className="max-w-[1366px] overflow-hidden flex flex-col m-auto ">
-      <div className="h-[415px] bg-[#1f1f1f] pt-[10px] pb-[14px]">
+      <div className="h-[425px] bg-[#1f1f1f] pt-[10px] pb-[14px]">
         <div className='w-[1200px] m-auto flex flex-row'>
           {footerItems.map((item, idx) => {
             return (
@@ -82,11 +84,12 @@ const Footer = () => {
                   </p>
                   <div className="flex flex-col gap-4">
                     {item.contents.map((item, idx) => (
-                      <div key={idx}>
-                        <p className='text-[12px] text-[#b4b4b4]'>
-                          {item.title}
-                        </p>
-                      </div>
+                      <Link
+                        key={idx}
+                        to={item.path}
+                        className='text-[12px] text-[#b4b4b4] hover:text-white'>
+                        {item.title}
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -95,14 +98,14 @@ const Footer = () => {
           })}
         </div>
       </div>
-      <div className="h-[104px] bg-black-primary">
-        <div className='w-[1200px] m-auto flex flex-row text-[#757575] text-[11px]'>
+      <div className=" bg-black-primary">
+        <div className='w-[1160px] h-[104px] m-auto flex flex-row justify-between items-center text-[#757575] text-[11px]'>
           <p>
-            Bản quyền thuộc về Công ty TNHH BHNT Protector Việt Nam. Tất cả các quyền được bảo hộ.
+            Bản quyền thuộc về Công ty TNHH BHNT Protector Việt Nam. Tất cả các quyền được bảo hộ.<br />
             Copyright © 2023 Protector Việt Nam
           </p>
           <div>
-            123
+            <UiImage src='/assets/images/social_medias.png' alt='social medias' imageClassName='h-16' />
           </div>
         </div>
       </div>
