@@ -1,6 +1,3 @@
-
-
-
 import api from "config/axios";
 
 // export const updateProductDetailsRequest = (
@@ -12,16 +9,10 @@ import api from "config/axios";
 //   data: CreateProductRequest
 // ): ApiResponse<GetProductDetailResponse> => api.post('/Products/', data);
 
-export const getProductsRequest = (
+export const getProductsRequest = () => api.get("/product/");
 
-) =>
-    api.get(`/product/`);
-
-export const getProductDetailRequest = (
-    data
-) => api.get(`/product/${data.id}`);
+export const getProductDetailRequest = (data) => api.get(`/product/${data.id}`);
 
 // export const deleteProductDetailsRequest = (
 //   id: string
 // ): ApiResponse<GetProductDetailResponse> => api.delete(`/Products/${id}`);
-

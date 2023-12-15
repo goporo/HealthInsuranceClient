@@ -1,9 +1,8 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import Router from './routes/Router';
-import { Provider } from 'react-redux';
-import { store } from './app/store';
-
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import Router from "./routes/Router";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
 
 function App() {
   return (
@@ -12,7 +11,6 @@ function App() {
         <Router />
       </BrowserRouter>
     </Provider>
-
   );
 }
 

@@ -1,24 +1,20 @@
-import React from 'react'
-import Header from '../header/Header'
+import React from "react";
+import Header from "../header/Header";
 
 const MainLayout = ({ children }) => {
-    return (
-        <div className='bg-slate-primary h-full min-h-screen'>
-
-            <div className=''>
-                <div className="fixed top-0 w-screen z-[999]">
-                    <Header />
-                </div>
-
-                <div className="flex-1 pt-[161px] flex flex-col items-center my-2">
-                    <div className="">
-                        {children}
-                    </div>
-                </div>
-
-            </div>
+  return (
+    <div className="bg-slate-primary h-full min-h-screen">
+      <div className="">
+        <div className="fixed top-0 w-screen z-[999]">
+          <Header />
         </div>
-    )
-}
 
-export default MainLayout
+        <div className="flex-1 pt-[161px] flex flex-col items-center my-2">
+          <div className="">{children}</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default MainLayout;
