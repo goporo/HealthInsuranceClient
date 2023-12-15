@@ -1,9 +1,9 @@
-import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import React from 'react';
 import UiSpinning from '../UiSpinning/UiSpinning';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket, faUser, faX } from '@fortawesome/free-solid-svg-icons';
+import { twMerge } from 'tailwind-merge';
 
 
 
@@ -20,7 +20,7 @@ const ModalButton = ({
     return (
         <button
             onClick={handleButtonClick}
-            className={clsx(className, 'h-10 w-[120px] px-4 py-[11px]')}
+            className={twMerge(className, 'h-10 w-[120px] px-4 py-[11px]')}
         >
             <p className="text-center">{title}</p>
         </button>
@@ -117,7 +117,7 @@ const UiModal = ({
                 animate={framerAnimate}
                 variants={backdropModalVariants}
                 transition={commonTransition}
-                className={clsx(
+                className={twMerge(
                     'fixed inset-0 z-[1000] h-full bg-black-primary',
                     markClassName
                 )}
@@ -130,14 +130,14 @@ const UiModal = ({
                 transition={commonTransition}
                 onClick={handleCloseModal}
                 tabIndex={-1}
-                className={clsx('fixed inset-0 z-[1001] text-center', mainClassName)}
+                className={twMerge('fixed inset-0 z-[1001] text-center', mainClassName)}
             >
                 <div className="inline-block h-full align-middle" />
                 <div
                     onClick={handleModalAreaClick}
                     role="dialog"
                     aria-modal="true"
-                    className={clsx(
+                    className={twMerge(
                         containerClassName,
                         ModalWidthLookUp[modalWidth],
                         'relative z-[1005] mx-auto inline-block max-w-[calc(100vw-32px)] bg-white text-start align-middle'
@@ -147,7 +147,7 @@ const UiModal = ({
                     <div className="flex h-full max-h-[calc(100vh-32px)] flex-col">
                         {/* header */}
                         <div
-                            className={clsx(
+                            className={twMerge(
                                 headerClassName,
                                 'flex items-center border-b border-gray-primary px-4 py-[13.5px]'
                             )}
@@ -161,20 +161,20 @@ const UiModal = ({
                             </button>
                         </div>
                         {/* body */}
-                        <div className={clsx(bodyClassName, 'flex-1 p-8 pb-0')}>
+                        <div className={twMerge(bodyClassName, 'flex-1 p-8 pb-0')}>
                             {children}
                         </div>
                         {/* footer */}
-                        <div className={clsx(footerClassName, 'p-8')}>
+                        <div className={twMerge(footerClassName, 'p-8')}>
                             <div
-                                className={clsx(footerButtonWrapperClassName, 'flex gap-x-4')}
+                                className={twMerge(footerButtonWrapperClassName, 'flex gap-x-4')}
                             >
                                 {!isLoading && (
                                     <React.Fragment>
                                         <ModalButton
                                             onClick={onCancel ?? handleCloseModal}
                                             title={cancelTitle}
-                                            className={clsx(
+                                            className={twMerge(
                                                 cancelClassName,
                                                 'bg-gray-300 text-black-primary'
                                             )}
@@ -182,7 +182,7 @@ const UiModal = ({
                                         <ModalButton
                                             onClick={handleConfirmModal}
                                             title={confirmTitle}
-                                            className={clsx(
+                                            className={twMerge(
                                                 confirmClassName,
                                                 'bg-primary text-white'
                                             )}

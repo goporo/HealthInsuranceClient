@@ -1,33 +1,26 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { twMerge } from "tailwind-merge";
+
 
 const UiButton = ({ children,
-  size = 'medium',
   icon,
   onClick,
-  type,
-  buttonClassName,
+  className,
   ...props }) => {
   return (
     <button
-      className={`flex min-w-[120px] flex-row items-center justify-center py-0 px-[16px] text-[14px] font-bold bg-primary text-white h-[40px]${buttonClassName}
-      ${size === 'medium'
-          ? 'min-w-[160px]'
-          : size === 'big'
-            ? 'w-full'
-            : 'w-fit'
-        }  
-      ${type === 'primary'
-          ? 'h-[40px] bg-primary text-white'
-          : type === 'secondary'
-            ? 'h-[40px] bg-gray-300'
-            : 'h-[32px] bg-blue-primary text-white'
-        } 
-      hover:opacity-[93%]`}
+
+      className={
+        twMerge('flex flex-row items-center justify-center py-0 px-[16px] font-bold whitespace-nowrap',
+          className
+        )
+      }
       onClick={onClick}
       {...props}
     >
       {icon && (
-        <span className="mr-[8px] max-h-[20px] max-w-[20px]">{icon}</span>
+        <FontAwesomeIcon icon={icon} className='w-fit' />
       )}
       {children}
     </button>

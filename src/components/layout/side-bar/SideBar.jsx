@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,6 +5,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import { ROUTES } from 'routes/RouterConfig';
+import { twMerge } from 'tailwind-merge';
 
 const ExpandTransitionTime = 300;
 
@@ -103,7 +103,7 @@ const NavItem = (props) => {
 
     return (
         <button onClick={handleNavClick}>
-            <div className={clsx('group flex relative h-full justify-start gap-4 px-[10px] py-[20px] items-center cursor-pointer text-[18px] font-semibold')}>
+            <div className={twMerge('group flex relative h-full justify-start gap-4 px-[10px] py-[20px] items-center cursor-pointer text-[18px] font-semibold')}>
                 {icon && <FontAwesomeIcon icon={icon} className="h-5 w-5 leading-[0px]" />}
                 <div className="">{title}</div>
                 <div className={underLineActiveClassName}></div>
@@ -174,12 +174,12 @@ const SideBar = ({ isScrollAtTop, setIsScrollAtTop }) => {
 
 
     return (
-        <div className={clsx('min-w-[1166px] w-[1166px] transition-all duration-300 ease-in-out', isScrollAtTop ? '' : '!w-screen')}>
+        <div className={twMerge('min-w-[1166px] w-[1166px] transition-all duration-300 ease-in-out', isScrollAtTop ? '' : '!w-screen')}>
             <motion.div
                 transition={commonTransition}
                 animate={controls}
             >
-                <nav className={clsx('justify-center px-[33px] gap-4 rounded-lg relative min-h-[69px] shadow-sm flex-row flex transition-all duration-300 ease-in-out', isScrollAtTop ? 'bg-primary text-white' : 'bg-white text-black-primary')}>
+                <nav className={twMerge('justify-center px-[33px] gap-4 rounded-lg relative min-h-[69px] shadow-sm flex-row flex transition-all duration-300 ease-in-out', isScrollAtTop ? 'bg-primary text-white' : 'bg-white text-black-primary')}>
                     {navItems.map((item, index) => {
                         const isActive = CheckIsActive(item);
                         return <NavItem key={index} isActive={isActive} paths={item.paths} items={item.items} title={item.title} icon={item.icon} handleNavClick={() => handleNavClick(item)} />;

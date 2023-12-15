@@ -1,5 +1,5 @@
-import clsx from 'clsx';
 import React from 'react'
+import { twMerge } from 'tailwind-merge';
 
 
 const UiSpinning = ({
@@ -7,10 +7,10 @@ const UiSpinning = ({
     spinningClassName = '',
 }) => {
     return (
-        <div className={clsx('text-center', wrapClassName)}>
+        <div className={twMerge('text-center', wrapClassName)}>
             <svg
                 role="status"
-                className={clsx(
+                className={twMerge(
                     'mr-2 inline h-10 w-10 animate-spin fill-primary text-black-primary/50',
                     spinningClassName
                 )}

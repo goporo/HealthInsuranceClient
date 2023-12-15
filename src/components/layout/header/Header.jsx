@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux';
 import { ROUTES } from '../../../routes/RouterConfig';
 import SideBar from '../side-bar/SideBar';
 import UiButton from 'components/common/ui/UiButton/UiButton';
-import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -44,7 +44,7 @@ const Header = () => {
 
     return (
         <motion.div animate={controls}>
-            <header className={clsx(' bg-white flex flex-col justify-start items-center px-6 shadow-[0_0_64px_rgba(0,0,0,.08)]',
+            <header className={twMerge(' bg-white flex flex-col justify-start items-center px-6 shadow-[0_0_64px_rgba(0,0,0,.08)]',
                 isScrollAtTop ? 'h-[126px]' : 'h-[34px]'
             )}>
                 <div className='min-w-[1200px] max-w-[1200px] min-h-[92px] flex flex-row justify-between items-center'>
@@ -55,9 +55,8 @@ const Header = () => {
                         <FontAwesomeIcon icon={faMagnifyingGlass} className='cursor-pointer' />
                         <FontAwesomeIcon icon={faPhone} className='cursor-pointer' />
 
-                        <UiButton className='bg-none flex flex-row gap-2 items-center'>
-                            <FontAwesomeIcon icon={faBagShopping} className='' />
-                            <div className='font-bold italic text-sm whitespace-nowrap'>
+                        <UiButton icon={faBagShopping} className='bg-none w-full flex flex-row gap-2 items-center'>
+                            <div className='font-bold italic text-sm whitespace-nowrap '>
                                 Mua bảo hiểm trên ePro
                             </div>
                         </UiButton>
