@@ -76,7 +76,7 @@ const Home = () => {
       </div>
 
       {/* trailer */}
-      <div className='relative pb-[140px]'>
+      <div className='relative mb-[140px]'>
         <UiImage
           src="https://www.prudential.com.vn/export/sites/prudential-vn/vi/.thu-vien/hinh-anh/chien-dich-thuong-hieu/2023/khi-can-minh-co-nhau-966x543.jpg"
           alt="banner"
@@ -85,6 +85,12 @@ const Home = () => {
           imageClassName={'m-auto'}
         />
         <motion.button
+          transition={{
+            duration: .75,
+            ease: 'easeInOut',
+            delay: .5,
+          }}
+          animate={{ y: [200, -20], opacity: [0, 1.00] }}
           whileHover={{ scale: 1.1 }}
           onClick={() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')}
           className='bg-primary w-[70px] h-[70px] flex items-center justify-center absolute left-1/2 top-1/2 rounded-full text-white transform origin-center'

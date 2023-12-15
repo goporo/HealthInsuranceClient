@@ -70,7 +70,7 @@ const footerItems = [
 
 const Footer = () => {
   return (
-    <div className="w-[1366px] flex flex-col m-auto ">
+    <div className="max-w-[1366px] overflow-hidden flex flex-col m-auto ">
       <div className="h-[415px] bg-[#1f1f1f] pt-[10px] pb-[14px]">
         <div className='w-[1200px] m-auto flex flex-row'>
           {footerItems.map((item, idx) => {

@@ -52,7 +52,7 @@ const Header = () => {
           isScrollAtTop ? 'h-[126px]' : 'h-[34px]',
         )}
       >
-        <div className="min-w-[1200px] max-w-[1200px] min-h-[92px] flex flex-row justify-between items-center">
+        <div className="min-w-[1000px] w-[1180px] min-h-[92px] flex flex-row justify-between items-center">
           <Link to={ROUTES.Home} className="flex flex-row gap-[2px]">
             <img
               src="/assets/images/logo.png"
