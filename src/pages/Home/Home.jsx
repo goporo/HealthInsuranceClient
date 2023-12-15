@@ -10,7 +10,10 @@ const Home = () => {
 
   useEffect(() => {
     const handleFetchProjects = async () => {
+
       if (fetchLoading) return
+
+
 
       setFetchLoading(true)
       try {
