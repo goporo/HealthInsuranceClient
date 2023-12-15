@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../header/Header'
+import Footer from '../footer/Footer'
 
 const MainLayout = ({ children }) => {
   return (
@@ -12,6 +13,8 @@ const MainLayout = ({ children }) => {
         <div className="flex-1 pt-[161px] flex flex-col items-center my-2">
           <div className="">{children}</div>
         </div>
+
+        <Footer />
       </div>
     </div>
   )

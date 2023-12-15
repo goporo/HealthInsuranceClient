@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 import { motion, AnimatePresence, useAnimation } from 'framer-motion'
-import { ROUTES } from 'routes/RouterConfig'
 import { twMerge } from 'tailwind-merge'
+import { navItems } from './navItems'
 
 const ExpandTransitionTime = 300
 
@@ -15,175 +15,34 @@ const commonTransition = {
   damping: 20,
 }
 
-const navItems = [
-  {
-    title: 'Khi CẦN mình có NHAU',
-    icon: null,
-    items: [
-      {
-        path: ROUTES.Home,
-        title: 'Chiến dịch thương hiệu: Khi CẦN mình có NHAU',
-      },
-    ],
-  },
-  {
-    title: 'Blog',
-    icon: null,
-    items: [
-      { path: ROUTES.BlogBaiVietNoiBat, title: 'Bài viết nổi bật' },
-      { path: ROUTES.BlogKientThucBaoHiem, title: 'Kiến thức bảo hiểm' },
-      { path: ROUTES.BlogSucKhoeTheChat, title: 'Sức khỏe thể chất' },
-      { path: ROUTES.BlogChamSocTinhThan, title: 'Chăm sóc tinh thần' },
-      { path: ROUTES.BlogQuanLyTaiChinh, title: 'Quản lý tài chính' },
-    ],
-  },
-  {
-    title: 'Sản phẩm bảo hiểm',
-    icon: null,
-    items: [
-      { path: ROUTES.BaoHiemTaiNan, title: 'Bảo hiểm tai nạn' },
-      {
-        path: ROUTES.BaoHiemBenhHiemNgheo,
-        title: 'Bảo hiểm bệnh hiểm nghèo',
-      },
-      {
-        path: ROUTES.BaoHiemChamSocSucKhoe,
-        title: 'Bảo hiểm chăm sóc sức khỏe',
-      },
-      {
-        path: ROUTES.BaoHiemTuVongVaThuongTat,
-        title: 'Bảo hiểm từ vong và thương tật',
-      },
-      { path: ROUTES.BaoHiemTonThuong, title: 'Bảo hiểm tổn thương' },
-
-      { path: ROUTES.DauTuAnToan, title: 'Đầu tư an toàn' },
-      {
-        path: ROUTES.DauTuLinhHoat,
-        title: 'Đầu tư linh hoạt với lợi nhuận/rủi ro không đảm bảo',
-      },
-      { path: ROUTES.DauTuDaiHan, title: 'Đầu tư dài hạn' },
-
-      { path: ROUTES.TichLuyGiaoDudc, title: 'Tích lũy Giáo dục' },
-      { path: ROUTES.TichLuyTuongLai, title: 'Tích lũy Tương lai' },
-    ],
-  },
-  {
-    title: 'Chăm sóc khách hàng',
-    icon: null,
-    items: [
-      {
-        path: ROUTES.CSKHGiaiQuyetQuyenLoiBaoHiem,
-        title: 'Giải quyết quyền lợi bảo hiểm',
-      },
-      {
-        path: ROUTES.CSKHKenhThanhToanPhiBaoHiem,
-        title: 'Kênh thanh toán phí bảo hiểm',
-      },
-      {
-        path: ROUTES.CSKHPROOnlineCongThongTin,
-        title: 'PRUOnline - Cổng thông tin khách hàng',
-      },
-      {
-        path: ROUTES.CSKHPRORewardDoiDiemNhanQua,
-        title: 'PRURewards - Đổi điểm nhận quà',
-      },
-      {
-        path: ROUTES.CSKHThongTinUuDaiVaDichVu,
-        title: 'Thông tin & ưu đãi dịch vụ',
-      },
-      {
-        path: ROUTES.CSKHTaiLieuVaBieuMauThamKhao,
-        title: 'Tài liệu và biểu mẫu tham khảo',
-      },
-      {
-        path: ROUTES.CSKHChuongTrinhKhuyenMai,
-        title: 'Chương trình khuyến mại nổi bật',
-      },
-      {
-        path: ROUTES.CSKHThucHienQuyenCuaChuThe,
-        title: 'Thực hiện quyền của chủ thể dữ liệu',
-      },
-    ],
-  },
-  {
-    title: 'Cơ hội nghề nghiệp',
-    icon: null,
-    items: [
-      {
-        path: ROUTES.CHNNTaiProtector,
-        title: 'Cơ hội nghề nghiệp tại Protector',
-      },
-      {
-        path: ROUTES.CHNNPhatTrien,
-        title: 'Cơ hội phát triển tại kênh hợp tác kinh doanh',
-      },
-      {
-        path: ROUTES.CHNNChuyenVienHoachDinhProplanner,
-        title: 'ProPlanner - Chuyên viên hoạch định tài chính',
-      },
-      {
-        path: ROUTES.CHNNTaiProtector,
-        title:
-          'PRURewards - Chuyên viên hoạch định tài chính Protector - Kênh đại lý',
-      },
-    ],
-  },
-  {
-    title: 'Về Protector',
-    icon: null,
-    items: [
-      { path: ROUTES.AboutProtector, title: 'Tìm hiểu về Protector' },
-      {
-        path: ROUTES.AboutPhatTrienCongDong,
-        title: 'Phát triển cộng đồng bền vững',
-      },
-      {
-        path: ROUTES.AboutTuDoTuoi50,
-        title: 'Tự do tuổi 50 - Sẵn sàng cho cuộc sống về già',
-      },
-      {
-        path: ROUTES.AboutChienDichThuongHieu,
-        title: 'Chiến dịch thương hiệu: Khi Tình Yêu Đủ Lớn',
-      },
-      {
-        path: ROUTES.About175NamTonVinh,
-        title: '175 năm tôn vinh cuộc sống',
-      },
-      { path: ROUTES.AboutThongCaoBaoChi, title: 'Thông cáo báo chí' },
-      {
-        path: ROUTES.AboutVanPhongGiaoDichGanBanNhat,
-        title: 'Văn phòng giao dịch gần bạn nhất',
-      },
-      { path: ROUTES.AboutLienHe, title: 'Liên hệ' },
-    ],
-  },
-]
-
-const underLineActiveClassName =
-  'w-full h-[5px] translate-y-[1px] rounded-lg bg-white absolute bottom-0 left-0 opacity-0 group-hover:opacity-100 duration-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform'
+const underLineVariants = {
+  hidden: { opacity: 1, scaleX: 0 },
+  visible: { opacity: 1, scaleX: 1 },
+};
 
 const NavItem = (props) => {
-  const { title, icon, isActive = false, handleNavClick } = props
+  const { title, icon, isActive = false, handleNavClick } = props;
 
   return (
     <button onClick={handleNavClick}>
-      <div
-        className={twMerge(
-          'group flex relative h-full justify-start gap-4 px-[10px] py-[20px] items-center cursor-pointer text-[18px] font-semibold',
-        )}
+      <motion.div
+        className="group flex relative h-full justify-start gap-4 px-[10px] py-[20px] items-center cursor-pointer text-[18px] font-semibold"
       >
         {icon && (
           <FontAwesomeIcon icon={icon} className="h-5 w-5 leading-[0px]" />
         )}
-        <div className="">{title}</div>
-        <div className={underLineActiveClassName}></div>
-        {isActive && (
-          <div className="w-full h-[5px] translate-y-[1px] rounded-lg bg-white absolute bottom-0 left-0 " />
-        )}
-      </div>
+        <div>{title}</div>
+        <motion.div
+          className="w-full h-[5px] translate-y-[1px] rounded-lg bg-white absolute bottom-0 left-0 origin-left"
+          variants={underLineVariants}
+          initial="hidden"
+          animate={isActive ? 'visible' : 'hidden'}
+          transition={{ duration: 0.3 }}
+        />
+      </motion.div>
     </button>
-  )
-}
+  );
+};
 
 const SideBar = ({ isScrollAtTop, setIsScrollAtTop }) => {
   const [activeItem, setActiveItem] = useState(null)
@@ -216,6 +75,12 @@ const SideBar = ({ isScrollAtTop, setIsScrollAtTop }) => {
         setIsNavExpand(true)
       }, ExpandTransitionTime)
     }
+    // clean up
+    else if (activeItem === item) {
+      setActiveItem(null);
+      return;
+    }
+
     setActiveItem(item)
   }
 
@@ -253,7 +118,7 @@ const SideBar = ({ isScrollAtTop, setIsScrollAtTop }) => {
       <motion.div transition={commonTransition} animate={controls}>
         <nav
           className={twMerge(
-            'justify-center px-[33px] gap-4 rounded-lg relative min-h-[69px] shadow-sm flex-row flex transition-all duration-300 ease-in-out',
+            'justify-center px-[33px] gap-4 rounded-lg relative z-[100] min-h-[69px] shadow-sm flex-row flex transition-all duration-300 ease-in-out',
             isScrollAtTop
               ? 'bg-primary text-white'
               : 'bg-white text-black-primary',
@@ -278,9 +143,9 @@ const SideBar = ({ isScrollAtTop, setIsScrollAtTop }) => {
           {isNavExpand && activeItem && (
             <motion.div
               className="w-full max-w-[1166px] m-auto px-2 mt-[-6px] bg-white pt-[46px] pb-[40px] shadow-sm origin-top grid lg:grid-cols-4 gap-y-8"
-              initial={{ scaleY: 0 }}
-              animate={{ scaleY: 1 }}
-              exit={{ scaleY: 0 }}
+              initial={{ scaleY: 0, }}
+              animate={{ scaleY: 1, position: 'relative' }} // prevent animation display over other element when animating
+              exit={{ scaleY: 0, }}
               transition={{
                 duration: ExpandTransitionTime / 1000,
                 ease: 'easeInOut',
@@ -306,6 +171,7 @@ const SideBar = ({ isScrollAtTop, setIsScrollAtTop }) => {
             </motion.div>
           )}
         </AnimatePresence>
+
       </motion.div>
     </div>
   )

@@ -60,15 +60,16 @@ const Header = () => {
               className="w-fit h-12"
             />
           </Link>
-          <div className="flex flex-row items-center gap-6 text-[#1b365d] h-fit">
+          <div className="flex flex-row items-center gap-5 text-[#1b365d] h-fit">
             <FontAwesomeIcon
               icon={faMagnifyingGlass}
-              className="cursor-pointer"
+              className="cursor-pointer w-[18px] h-[18px]"
             />
-            <FontAwesomeIcon icon={faPhone} className="cursor-pointer" />
+            <FontAwesomeIcon icon={faPhone} className="cursor-pointer w-[18px] h-[18px]" />
 
             <UiButton
               icon={faBagShopping}
+              iconClassName={'w-[18px] h-[18px]'}
               className="bg-none w-full flex flex-row gap-2 items-center"
             >
               <div className="font-bold italic text-sm whitespace-nowrap ">
