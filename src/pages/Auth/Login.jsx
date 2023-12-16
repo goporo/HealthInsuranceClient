@@ -9,6 +9,7 @@ import { ROUTES } from '../../routes/RouterConfig'
 import api from '../../config/axios'
 import UiSpinning from 'components/common/ui/UiSpinning/UiSpinning'
 import UiButton from 'components/common/ui/UiButton/UiButton'
+import ButtonZoomShadow from 'components/animation/ButtonZoomShadow'
 
 const Login = () => {
   const [onLoadingSubmit, setOnLoadingSubmit] = useState(false)
@@ -77,7 +78,7 @@ const Login = () => {
     <AuthWrapper>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white p-8 rounded shadow-md w-96"
+        className="bg-white p-8 rounded shadow-xl w-[500px] h-[370px] border-gray-500 border-[1px] border-opacity-10"
       >
         <h2 className="text-2xl mb-6 font-semibold text-gray-800">Login</h2>
         <div className="mb-4">
@@ -129,12 +130,12 @@ const Login = () => {
           {onLoadingSubmit ? (
             <UiSpinning></UiSpinning>
           ) : (
-            <UiButton
+            <ButtonZoomShadow
               type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded"
+              className='mt-4'
             >
               Login
-            </UiButton>
+            </ButtonZoomShadow>
           )}
         </div>
         {errorMessage && (

@@ -1,4 +1,5 @@
 import UiButton from 'components/common/ui/UiButton/UiButton'
+import UiImage from 'components/common/ui/UiImage/UiImage'
 import UiModal from 'components/common/ui/UiModal/UiModal'
 import UiSpinning from 'components/common/ui/UiSpinning/UiSpinning'
 import NotFound from 'pages/404/NotFound'
@@ -45,10 +46,7 @@ const ProductDetail = () => {
   if (fetchError) return <NotFound />
 
   return (
-    <>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero error culpa velit! Repellat, quidem enim maiores ratione eaque consequatur, dolorum minus consectetur commodi ipsam vel quasi, doloribus odit nisi recusandae!
-      </p>
+    <div className='w-[1366px] '>
       <UiModal
         visible={isModalVisible}
         onConfirm={handleCloseModal}
@@ -62,7 +60,8 @@ const ProductDetail = () => {
       {!fetchLoading ? (
         <div className="m-8 bg-white p-12 shadow-sm min-w-[400px] overflow-hidden">
           <h2>ProductDetail</h2>
-          <pre>{JSON.stringify(response, null, 2)}</pre>
+
+          <pre className=' whitespace-pre-wrap'>{JSON.stringify(response, null, 2)}</pre>
           <div className="flex justify-center flex-row">
             <UiButton
               onClick={() => {
@@ -76,7 +75,7 @@ const ProductDetail = () => {
       ) : (
         <UiSpinning />
       )}
-    </>
+    </div>
   )
 }
 

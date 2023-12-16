@@ -42,7 +42,7 @@ const ProductList = () => {
         setIsModalVisible(false)
     }
 
-    const tempDescription = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.Necessitatibus dignissimos ullam aperiam ea aut vitae similique quos, totam, eum ratione animi minima rerum tenetur cupiditate repellendus facilis quia, rem est.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Necessitatibus dignissimos ullam aperiam ea aut vitae similique quos, totam, eum ratione animi minima rerum tenetur cupiditate repellendus facilis quia, rem est.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Necessitatibus dignissimos ullam aperiam ea aut vitae similique quos, totam, eum ratione animi minima rerum tenetur cupiditate repellendus facilis quia, rem est.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Necessitatibus dignissimos ullam aperiam ea aut vitae similique quos, totam, eum ratione animi minima rerum tenetur cupiditate repellendus facilis quia, rem est.'
+    const tempDescription = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.Necessitatibus dignissimos Lorem ipsum dolor sit amet, consectetur adipisicing elit.Necessitatibus dignissimos ullam aperiam ea aut vitae similique quos, totam, eum ratione animi minima rerum tenetur cupiditate repellendus facilis quia, rem est.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Necessitatibus dignissimos ullam aperiam ea aut vitae similique quos, totam, eum ratione animi minima rerum tenetur cupiditate repellendus facilis quia, rem est.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Necessitatibus dignissimos ullam aperiam ea aut vitae similique quos, totam, eum ratione animi minima rerum tenetur cupiditate repellendus facilis quia, rem est.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Necessitatibus dignissimos ullam aperiam ea aut vitae similique quos, totam, eum ratione animi minima rerum tenetur cupiditate repellendus facilis quia, rem est.'
 
     // temp return in case product not found
     if (fetchError) return <NotFound />
@@ -69,7 +69,7 @@ const ProductList = () => {
                             Kế hoạch bảo vệ và chăm sóc sức khỏe?
                         </span>
                     </h1>
-                    <div className="m-8 bg-white p-12 shadow-sm min-w-[400px] overflow-hidden">
+                    <div className="m-8 p-12 shadow-sm min-w-[400px] overflow-hidden">
                         {/* <pre className='whitespace-pre-wrap'>{JSON.stringify(response, null, 2)}</pre> */}
                         <div className='grid grid-cols-3 -mt-36 w-fit gap-x-9 gap-y-16 pb-32 pt-40'>
                             {
