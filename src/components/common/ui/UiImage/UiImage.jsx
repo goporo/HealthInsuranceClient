@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
-const UiImage = ({ src, alt, height, width, imageClassName }) => (
+const UiImage = ({ src, alt, height, width, className }) => (
 
   <>
     <LazyLoadImage
@@ -9,7 +9,7 @@ const UiImage = ({ src, alt, height, width, imageClassName }) => (
       height={height}
       src={src} // use normal <img> attributes as props
       width={width}
-      className={imageClassName}
+      className={className}
     />
   </>
 

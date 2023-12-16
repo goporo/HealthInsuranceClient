@@ -51,7 +51,6 @@ const SideBar = ({ isScrollAtTop, setIsScrollAtTop }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log(window.scrollY)
       if (window.scrollY > 0) {
         setIsScrollAtTop(false)
       } else {
@@ -153,7 +152,7 @@ const SideBar = ({ isScrollAtTop, setIsScrollAtTop }) => {
             >
               {activeItem.items.map((item, idx) => {
                 return (
-                  <Link key={idx} to={item.path}>
+                  <Link key={idx} to={item.path} onClick={() => { setIsNavExpand(false); setActiveItem(null) }}>
                     <div className="w-[300px] px-4 flex flex-row items-end flex-1 relative">
                       <div className="text-[22px] relative">
                         {item.title}

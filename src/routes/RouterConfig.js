@@ -2,6 +2,7 @@ export const ROUTES = {
   Login: '/login',
 
   Home: '/',
+  SpecialEvent: '/special-event',
 
   Blog: '/blog',
   BlogBaiVietNoiBat: '/blog/bai-viet-noi-bat',
@@ -9,6 +10,9 @@ export const ROUTES = {
   BlogSucKhoeTheChat: '/blog/suc-khoe-the-chat',
   BlogChamSocTinhThan: '/blog/cham-soc-tinh-than',
   BlogQuanLyTaiChinh: '/blog/quan-ly-tai-chinh',
+  BlogQuyTrinhBoiThuong: '/blog/quy-trinh-boi-thuong',
+  BlogCacDieuKhoanLoaiTru: '/blog/cac-dieu-khoan-loai-tru',
+
 
   TichLuy: '/tich-luy',
   TichLuyGiaoDudc: '/tich-luy/giao-duc',

@@ -6,7 +6,7 @@ export const navItems = [
         icon: null,
         items: [
             {
-                path: ROUTES.Home,
+                path: ROUTES.SpecialEvent,
                 title: 'Chiến dịch thương hiệu: Khi CẦN mình có NHAU',
             },
         ],
@@ -16,10 +16,10 @@ export const navItems = [
         icon: null,
         items: [
             { path: ROUTES.BlogBaiVietNoiBat, title: 'Bài viết nổi bật' },
-            { path: ROUTES.BlogKientThucBaoHiem, title: 'Kiến thức bảo hiểm' },
-            { path: ROUTES.BlogSucKhoeTheChat, title: 'Sức khỏe thể chất' },
-            { path: ROUTES.BlogChamSocTinhThan, title: 'Chăm sóc tinh thần' },
-            { path: ROUTES.BlogQuanLyTaiChinh, title: 'Quản lý tài chính' },
+            { path: ROUTES.BlogBaiVietNoiBat, title: 'Kiến thức bảo hiểm' },
+            { path: ROUTES.BlogBaiVietNoiBat, title: 'Sức khỏe thể chất' },
+            { path: ROUTES.BlogBaiVietNoiBat, title: 'Chăm sóc tinh thần' },
+            { path: ROUTES.BlogBaiVietNoiBat, title: 'Quản lý tài chính' },
         ],
     },
     {

@@ -6,13 +6,13 @@ import AuthWrapper from './AuthWrapper'
 import { jwtDecode } from 'jwt-decode'
 import authService from '../../services/authService'
 import { ROUTES } from '../../routes/RouterConfig'
-import axios from 'axios'
 import api from '../../config/axios'
 import UiSpinning from 'components/common/ui/UiSpinning/UiSpinning'
 import UiButton from 'components/common/ui/UiButton/UiButton'
 
 const Login = () => {
   const [onLoadingSubmit, setOnLoadingSubmit] = useState(false)
+  const [errorMessage, setErrorMessage] = useState(null)
 
   const {
     register,
@@ -58,6 +58,14 @@ const Login = () => {
       }
     } catch (error) {
       console.error('Login failed', error)
+      // Check if the error is from the backend response
+      if (error.data) {
+        // Update the state with the error message from the backend
+        setErrorMessage(error.data || 'Login failed')
+      } else {
+        setErrorMessage('Invalid Username or Password!')
+      }
+
     } finally {
       // This block will be executed whether an error occurred or not
       // will add error display later
@@ -85,9 +93,8 @@ const Login = () => {
             {...register('username', {
               required: 'Username is required',
             })}
-            className={`w-full px-3 py-2 border rounded ${
-              errors.username ? 'border-red-500' : ''
-            }`}
+            className={`w-full px-3 py-2 border rounded ${errors.username ? 'border-red-500' : ''
+              }`}
           />
           {errors.username && (
             <p className="text-red-500 text-sm mt-1">
@@ -108,9 +115,8 @@ const Login = () => {
             {...register('password', {
               required: 'Password is required',
             })}
-            className={`w-full px-3 py-2 border rounded ${
-              errors.password ? 'border-red-500' : ''
-            }`}
+            className={`w-full px-3 py-2 border rounded ${errors.password ? 'border-red-500' : ''
+              }`}
           />
           {errors.password && (
             <p className="text-red-500 text-sm mt-1">
@@ -131,6 +137,9 @@ const Login = () => {
             </UiButton>
           )}
         </div>
+        {errorMessage && (
+          <div className="mt-4 text-red-500 text-sm text-center">{errorMessage}</div>
+        )}
       </form>
     </AuthWrapper>
   )

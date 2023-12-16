@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { getProductsRequest } from 'requests/product.request'
 import WipeImage from 'components/animation/WipeImage'
-import UiSpinning from 'components/common/ui/UiSpinning/UiSpinning'
 import UiImage from 'components/common/ui/UiImage/UiImage'
 import { motion, useAnimation } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight, faPlay } from '@fortawesome/free-solid-svg-icons'
+import ButtonZoomShadow from 'components/animation/ButtonZoomShadow'
 
 const Home = () => {
   const [response, setResponse] = useState([])
@@ -98,7 +98,6 @@ const Home = () => {
           <FontAwesomeIcon icon={faPlay} className='text-white w-7 h-7 ml-1' />
         </motion.button>
       </div>
-
     </div>
   )
 }
