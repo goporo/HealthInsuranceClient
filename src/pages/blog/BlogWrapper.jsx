@@ -11,7 +11,7 @@ const BlogWrapper = ({ children }) => {
 
     const handleBlogSwipe = (indexAddition) => {
         const newIndex = startSliceIndex + indexAddition;
-        if (newIndex < 0 || newIndex >= latestBlogs.length) return
+        if (newIndex < 0 || newIndex >= latestBlogs.length - 1) return
         setStartSliceIndex(newIndex)
     }
 

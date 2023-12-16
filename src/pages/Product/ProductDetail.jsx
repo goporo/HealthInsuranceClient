@@ -46,6 +46,9 @@ const ProductDetail = () => {
 
   return (
     <>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero error culpa velit! Repellat, quidem enim maiores ratione eaque consequatur, dolorum minus consectetur commodi ipsam vel quasi, doloribus odit nisi recusandae!
+      </p>
       <UiModal
         visible={isModalVisible}
         onConfirm={handleCloseModal}

@@ -26,30 +26,30 @@ export const navItems = [
         title: 'Sản phẩm bảo hiểm',
         icon: null,
         items: [
-            { path: ROUTES.BaoHiemTaiNan, title: 'Bảo hiểm tai nạn' },
+            { path: ROUTES.BaoHiem, title: 'Bảo hiểm tai nạn' },
             {
-                path: ROUTES.BaoHiemBenhHiemNgheo,
+                path: ROUTES.BaoHiem,
                 title: 'Bảo hiểm bệnh hiểm nghèo',
             },
             {
-                path: ROUTES.BaoHiemChamSocSucKhoe,
+                path: ROUTES.BaoHiem,
                 title: 'Bảo hiểm chăm sóc sức khỏe',
             },
             {
-                path: ROUTES.BaoHiemTuVongVaThuongTat,
+                path: ROUTES.BaoHiem,
                 title: 'Bảo hiểm từ vong và thương tật',
             },
-            { path: ROUTES.BaoHiemTonThuong, title: 'Bảo hiểm tổn thương' },
+            { path: ROUTES.BaoHiem, title: 'Bảo hiểm tổn thương' },
 
-            { path: ROUTES.DauTuAnToan, title: 'Đầu tư an toàn' },
+            { path: ROUTES.BaoHiem, title: 'Đầu tư an toàn' },
             {
-                path: ROUTES.DauTuLinhHoat,
+                path: ROUTES.BaoHiem,
                 title: 'Đầu tư linh hoạt với lợi nhuận/rủi ro không đảm bảo',
             },
-            { path: ROUTES.DauTuDaiHan, title: 'Đầu tư dài hạn' },
+            { path: ROUTES.BaoHiem, title: 'Đầu tư dài hạn' },
 
-            { path: ROUTES.TichLuyGiaoDudc, title: 'Tích lũy Giáo dục' },
-            { path: ROUTES.TichLuyTuongLai, title: 'Tích lũy Tương lai' },
+            { path: ROUTES.BaoHiem, title: 'Tích lũy Giáo dục' },
+            { path: ROUTES.BaoHiem, title: 'Tích lũy Tương lai' },
         ],
     },
     {

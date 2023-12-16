@@ -76,7 +76,7 @@ const KhiCanMinhCoNhau = () => {
             </div>
 
             {/* trailer */}
-            <div className='relative mb-[140px]'>
+            <div className='relative mb-[140px] flex flex-row justify-center'>
                 <UiImage
                     src="https://www.prudential.com.vn/export/sites/prudential-vn/vi/.thu-vien/hinh-anh/chien-dich-thuong-hieu/2023/khi-can-minh-co-nhau-966x543.jpg"
                     alt="banner"

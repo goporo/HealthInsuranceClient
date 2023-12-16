@@ -24,6 +24,8 @@ export const ROUTES = {
   DauTuDaiHan: '/dau-tu/dai-han',
 
   BaoHiem: '/bao-hiem',
+  BaoHiemChiTiet: `/bao-hiem/:productId`,
+
   BaoHiemTaiNan: '/bao-hiem/tai-nan',
   BaoHiemTuVongVaThuongTat: '/bao-hiem/tu-vong-va-thuong-tat',
   BaoHiemBenhHiemNgheo: '/bao-hiem/benh-hiem-ngheo',

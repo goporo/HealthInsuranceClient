@@ -13,6 +13,7 @@ import KhiCanMinhCoNhau from 'pages/SpecialEvent/KhiCanMinhCoNhau'
 import BlogList from 'pages/blog/BlogList'
 import QuyTrinhBoiThuong from 'pages/blog/BaiVietNoiBat/QuyTrinhBoiThuong'
 import CacDieuKhoanLoaiTru from 'pages/blog/BaiVietNoiBat/CacDieuKhoanLoaiTru'
+import ProductList from 'components/section/product/ProductList'
 
 const Router = () => {
   return (
@@ -33,6 +34,10 @@ const Router = () => {
         <Route path={ROUTES.BlogBaiVietNoiBat} element={<BlogList />} />
         <Route path={ROUTES.BlogQuyTrinhBoiThuong} element={<QuyTrinhBoiThuong />} />
         <Route path={ROUTES.BlogCacDieuKhoanLoaiTru} element={<CacDieuKhoanLoaiTru />} />
+        <Route path={ROUTES.BaoHiem} element={<ProductList />} />
+        <Route path={ROUTES.BaoHiemChiTiet} element={<ProductDetail />} />
+
+
 
         <Route path={ROUTES.Product} element={<ProductDetail />} />
       </Route>
