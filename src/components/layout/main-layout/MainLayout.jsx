@@ -3,6 +3,7 @@ import Header from '../header/Header'
 import Footer from '../footer/Footer'
 
 const MainLayout = ({ children }) => {
+
   return (
     <div className="bg-slate-primary h-full min-h-screen">
       <div className="">

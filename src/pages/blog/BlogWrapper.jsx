@@ -5,6 +5,7 @@ import { latestBlogs } from './latestBlogs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { twMerge } from 'tailwind-merge';
+import useScrollReset from 'hooks/useScrollReset'
 
 const BlogWrapper = ({ children }) => {
     const [startSliceIndex, setStartSliceIndex] = useState(0);
@@ -14,6 +15,7 @@ const BlogWrapper = ({ children }) => {
         if (newIndex < 0 || newIndex >= latestBlogs.length - 1) return
         setStartSliceIndex(newIndex)
     }
+
 
     return (
         <div className='flex flex-col items-center max-w-[1366px]'>

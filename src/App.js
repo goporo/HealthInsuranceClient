@@ -1,15 +1,15 @@
 import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import Router from './routes/Router'
+import { RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
+import { router } from './routes/Router'
 import { Provider } from 'react-redux'
 import { store } from './app/store'
+
+
 
 function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
+      <RouterProvider router={router} />
     </Provider>
   )
 }

@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 import { ROUTES } from 'routes/RouterConfig'
 
 const QuyTrinhBoiThuong = () => {
+
+
     return (
         <BlogWrapper>
 

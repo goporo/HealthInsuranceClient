@@ -91,7 +91,6 @@ const Home = () => {
             delay: 1,
           }}
           animate={{ y: [200, -20], opacity: [0, 1.00] }}
-          whileHover={{ scale: 1.1 }}
           onClick={() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')}
           className='bg-primary w-[70px] h-[70px] flex items-center justify-center absolute left-1/2 top-1/2 rounded-full text-white transform origin-center'
         >

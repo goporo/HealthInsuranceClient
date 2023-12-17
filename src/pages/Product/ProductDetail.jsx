@@ -1,3 +1,4 @@
+import ButtonZoomShadow from 'components/animation/ButtonZoomShadow'
 import UiButton from 'components/common/ui/UiButton/UiButton'
 import UiImage from 'components/common/ui/UiImage/UiImage'
 import UiModal from 'components/common/ui/UiModal/UiModal'
@@ -54,7 +55,62 @@ const ProductDetail = () => {
         onCancel={handleCloseModal}
         headerTitle="Modal Title"
       >
-        Test modal
+        <h1>
+          Nhập thông tin đăng ký bảo hiểm
+        </h1>
+        <div className='mt-5'>
+          <form className="max-w-md p-6 bg-white rounded-md ">
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="firstName">
+                First Name
+              </label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                className="w-full p-2 border border-gray-300 rounded"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="lastName">
+                Last Name
+              </label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                className="w-full p-2 border border-gray-300 rounded"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="w-full p-2 border border-gray-300 rounded"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                className="w-full p-2 border border-gray-300 rounded"
+                required
+              />
+            </div>
+
+          </form>
+        </div>
       </UiModal>
 
       {!fetchLoading ? (
@@ -63,13 +119,13 @@ const ProductDetail = () => {
 
           <pre className=' whitespace-pre-wrap'>{JSON.stringify(response, null, 2)}</pre>
           <div className="flex justify-center flex-row">
-            <UiButton
+            <ButtonZoomShadow
               onClick={() => {
                 setIsModalVisible(!isModalVisible)
               }}
             >
               Enroll Now
-            </UiButton>
+            </ButtonZoomShadow>
           </div>
         </div>
       ) : (
