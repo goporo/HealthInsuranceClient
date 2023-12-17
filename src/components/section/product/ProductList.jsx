@@ -1,6 +1,7 @@
 import UiButton from 'components/common/ui/UiButton/UiButton'
 import UiModal from 'components/common/ui/UiModal/UiModal'
 import UiSpinning from 'components/common/ui/UiSpinning/UiSpinning'
+import NoItemFound from 'pages/404/NoItemFound'
 import NotFound from 'pages/404/NotFound'
 import BlogCard from 'pages/blog/BlogCard'
 import React, { useEffect, useState } from 'react'
@@ -45,7 +46,7 @@ const ProductList = () => {
     const tempDescription = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.Necessitatibus dignissimos Lorem ipsum dolor sit amet, consectetur adipisicing elit.Necessitatibus dignissimos ullam aperiam ea aut vitae similique quos, totam, eum ratione animi minima rerum tenetur cupiditate repellendus facilis quia, rem est.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Necessitatibus dignissimos ullam aperiam ea aut vitae similique quos, totam, eum ratione animi minima rerum tenetur cupiditate repellendus facilis quia, rem est.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Necessitatibus dignissimos ullam aperiam ea aut vitae similique quos, totam, eum ratione animi minima rerum tenetur cupiditate repellendus facilis quia, rem est.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Necessitatibus dignissimos ullam aperiam ea aut vitae similique quos, totam, eum ratione animi minima rerum tenetur cupiditate repellendus facilis quia, rem est.'
 
     // temp return in case product not found
-    if (fetchError) return <NotFound />
+    if (fetchError) return <NoItemFound />
 
     return (
         <>
