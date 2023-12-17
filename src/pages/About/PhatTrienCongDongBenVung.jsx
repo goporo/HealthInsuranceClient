@@ -45,7 +45,7 @@ const PhatTrienCongDongBenVung = () => {
               Phát triển
               <span className='text-primary font-light'>&nbsp; cộng đồng <br /> bền vững</span>
             </h1>
-            <p className='text-[18px] mt-5'>Prudential luôn nỗ lực hiện thực hóa cam kết giúp mọi người đạt được những điều tốt đẹp nhất trong cuộc sống. Bên cạnh hoạt động kinh doanh hiệu quả, Prudential đã và đang đầu tư vào các hoạt động xã hội với mục tiêu phát triển cộng đồng bền vững và kiến tạo một cuộc sống khỏe mạnh hơn, thịnh vượng hơn cho người dân Việt Nam, tập trung vào các lĩnh vực Giáo dục, Sống khỏe và An toàn.</p>
+            <p className='text-[18px] mt-5'>Protector luôn nỗ lực hiện thực hóa cam kết giúp mọi người đạt được những điều tốt đẹp nhất trong cuộc sống. Bên cạnh hoạt động kinh doanh hiệu quả, Protector đã và đang đầu tư vào các hoạt động xã hội với mục tiêu phát triển cộng đồng bền vững và kiến tạo một cuộc sống khỏe mạnh hơn, thịnh vượng hơn cho người dân Việt Nam, tập trung vào các lĩnh vực Giáo dục, Sống khỏe và An toàn.</p>
             <ButtonZoomShadow className='mt-6'>Nhìn lại hành trình năm 2023</ButtonZoomShadow>
           </div>
           <div className="w-[666px] h-[500px] overflow-hidden shrink-0">
@@ -62,7 +62,7 @@ const PhatTrienCongDongBenVung = () => {
               Giáo dục
             </h1>
             <p className='text-[18px] mt-5'>
-              Giáo dục luôn là trọng tâm được Prudential ưu tiên bởi đây chính là sự đầu tư dài hạn vào con người, giúp nuôi dưỡng một thế hệ trẻ tự tin, năng động, hiểu biết và góp phần kiến tạo một tương lai thịnh vượng hơn cho đất nước.
+              Giáo dục luôn là trọng tâm được Protector ưu tiên bởi đây chính là sự đầu tư dài hạn vào con người, giúp nuôi dưỡng một thế hệ trẻ tự tin, năng động, hiểu biết và góp phần kiến tạo một tương lai thịnh vượng hơn cho đất nước.
             </p>
             <ButtonZoomShadow className='mt-6 w-[200px]'>Xem thêm</ButtonZoomShadow>
           </div>
@@ -74,7 +74,7 @@ const PhatTrienCongDongBenVung = () => {
               An toàn
             </h1>
             <p className='text-[18px] mt-5'>
-              Các hoạt động An toàn đã trở thành hoạt động thường niên của Prudential và thu hút hàng ngàn nhân viên tham gia với các dự án nhân văn, thiết thực được triển khai tại nhiều địa phương trên cả nước, góp phần nâng cao điều kiện sống an toàn cho mọi người dân Việt Nam.
+              Các hoạt động An toàn đã trở thành hoạt động thường niên của Protector và thu hút hàng ngàn nhân viên tham gia với các dự án nhân văn, thiết thực được triển khai tại nhiều địa phương trên cả nước, góp phần nâng cao điều kiện sống an toàn cho mọi người dân Việt Nam.
             </p>
             <ButtonZoomShadow className='mt-6 w-[200px]'>Xem thêm</ButtonZoomShadow>
           </div>
@@ -92,7 +92,7 @@ const PhatTrienCongDongBenVung = () => {
               Sống khỏe
             </h1>
             <p className='text-[18px] mt-5'>
-              Việc xây dựng lối sống khoẻ mạnh cho cộng đồng cũng được Prudential chú trọng thực hiện trong nhiều năm qua. Không chỉ dừng lại ở những hoạt động rèn luyện sức khỏe, nâng cao kiến thức, Prudential còn hướng tới việc nâng cao đời sống cho các đối tượng có hoàn cảnh khó khăn và dễ bị tổn thương.
+              Việc xây dựng lối sống khoẻ mạnh cho cộng đồng cũng được Protector chú trọng thực hiện trong nhiều năm qua. Không chỉ dừng lại ở những hoạt động rèn luyện sức khỏe, nâng cao kiến thức, Protector còn hướng tới việc nâng cao đời sống cho các đối tượng có hoàn cảnh khó khăn và dễ bị tổn thương.
             </p>
             <ButtonZoomShadow className='mt-6 w-[200px]'>Xem thêm</ButtonZoomShadow>
           </div>

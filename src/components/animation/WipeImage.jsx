@@ -1,6 +1,7 @@
 import { motion, useAnimation } from 'framer-motion'
 import React, { useEffect } from 'react'
 
+
 const WipeImage = ({ children }) => {
   const controls = useAnimation()
 

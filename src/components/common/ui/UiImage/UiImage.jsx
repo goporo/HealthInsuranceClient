@@ -10,6 +10,7 @@ const UiImage = ({ src, alt, height, width, className }) => (
       src={src} // use normal <img> attributes as props
       width={width}
       className={className}
+      placeholderSrc="/assets/images/place_holder/blur_bg.jpg"
     />
   </>
 
