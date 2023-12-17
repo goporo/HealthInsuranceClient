@@ -1,41 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { getProductsRequest } from 'requests/product.request'
 import WipeImage from 'components/animation/WipeImage'
 import UiImage from 'components/common/ui/UiImage/UiImage'
 import { motion, useAnimation } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight, faPlay } from '@fortawesome/free-solid-svg-icons'
-import ButtonZoomShadow from 'components/animation/ButtonZoomShadow'
+import { faPlay } from '@fortawesome/free-solid-svg-icons'
 
 const Home = () => {
-  const [response, setResponse] = useState([])
-  const [fetchLoading, setFetchLoading] = useState(false)
-
-  useEffect(() => {
-    const handleFetchProjects = async () => {
-
-      if (fetchLoading) return
-
-
-
-      setFetchLoading(true)
-      try {
-        const fetchResult = await getProductsRequest()
-        const data = fetchResult?.data
-        setResponse(data)
-      } catch (error) {
-        console.error('Error fetching products:', error)
-      } finally {
-        setFetchLoading(false)
-      }
-    }
-
-    handleFetchProjects()
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  {/* <ProductItem response={response} fetchLoading={fetchLoading} /> */ }
 
   return (
     <div className="px-12 -mt-12">

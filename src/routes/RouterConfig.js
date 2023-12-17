@@ -55,7 +55,7 @@ export const ROUTES = {
   CHNNChuyenVienHoachDinhProtector:
     '/co-hoi-nghe-nghiep/protector-chuyen-vien-hoach-dinh',
 
-  About: '/about',
+  About: '/about/*',
   AboutProtector: '/about/protector',
   AboutPhatTrienCongDong: '/about/phat-trien-cong-dong',
   AboutTuDoTuoi50: '/about/tu-do-tuoi-50',

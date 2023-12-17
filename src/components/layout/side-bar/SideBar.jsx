@@ -64,7 +64,7 @@ const SideBar = ({ isScrollAtTop, setIsScrollAtTop }) => {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [controls])
+  }, [controls, setIsScrollAtTop])
 
   const handleNavClick = (item) => {
     setIsNavExpand(!isNavExpand)

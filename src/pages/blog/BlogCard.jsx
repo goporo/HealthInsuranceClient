@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import UiImage from 'components/common/ui/UiImage/UiImage'
+import ArrowSlide from 'components/animation/ArrowSlide'
 
 const BlogCard = ({ img, title, subTitle, desc, path }) => {
     return (
@@ -21,16 +22,9 @@ const BlogCard = ({ img, title, subTitle, desc, path }) => {
                     <p className='font-light mt-3 text-ellipsis overflow-hidden h-[120px]'>{desc}</p>
                 </div>
             </div>
-
-            <button
-                className='bg-primary overflow-hidden w-[40px] h-[40px] flex items-center justify-center absolute right-8 -bottom-5 rounded-full text-white transform origin-center'
-            >
-                <div className='group-hover:translate-x-20 duration-500 transition-all flex flex-row gap-x-16'>
-                    <FontAwesomeIcon icon={faChevronRight} className='text-white w-4 h-4 ' />
-                    <FontAwesomeIcon icon={faChevronRight} className='text-white w-4 h-4 ' />
-                    <FontAwesomeIcon icon={faChevronRight} className='text-white w-4 h-4 ' />
-                </div>
-            </button>
+            <div className=' absolute right-8 -bottom-5'>
+                <ArrowSlide />
+            </div>
         </Link>
     )
 }

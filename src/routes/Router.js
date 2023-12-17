@@ -15,6 +15,7 @@ import QuyTrinhBoiThuong from 'pages/blog/BaiVietNoiBat/QuyTrinhBoiThuong'
 import CacDieuKhoanLoaiTru from 'pages/blog/BaiVietNoiBat/CacDieuKhoanLoaiTru'
 import ProductList from 'components/section/product/ProductList'
 import { ScrollRestoration } from "react-router-dom";
+import About from 'pages/About/About'
 
 
 
@@ -40,6 +41,8 @@ export const router = createBrowserRouter(
         <Route path={ROUTES.BlogCacDieuKhoanLoaiTru} element={<CacDieuKhoanLoaiTru />} />
         <Route path={ROUTES.BaoHiem} element={<ProductList />} />
         <Route path={ROUTES.BaoHiemChiTiet} element={<ProductDetail />} />
+        <Route path={ROUTES.About} element={<About />} />
+
 
 
         <Route path={ROUTES.Product} element={<ProductDetail />} />

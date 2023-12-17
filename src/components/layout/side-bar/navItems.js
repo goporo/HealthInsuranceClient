@@ -133,7 +133,10 @@ export const navItems = [
                 path: ROUTES.About175NamTonVinh,
                 title: '175 năm tôn vinh cuộc sống',
             },
-            { path: ROUTES.AboutThongCaoBaoChi, title: 'Thông cáo báo chí' },
+            {
+                path: ROUTES.AboutThongCaoBaoChi,
+                title: 'Thông cáo báo chí'
+            },
             {
                 path: ROUTES.AboutVanPhongGiaoDichGanBanNhat,
                 title: 'Văn phòng giao dịch gần bạn nhất',

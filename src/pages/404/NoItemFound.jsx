@@ -8,7 +8,7 @@ const NoItemFound = () => {
     const navigate = useNavigate()
 
     return (
-        <div className="flex flex-col gap-12 items-center justify-center h-screen">
+        <div className="flex flex-col gap-12 items-center justify-center h-[calc(100vh-162px)] ">
             <div className="text-center flex flex-col items-center">
                 <UiImage width={240} height={240} src={"/assets/images/no_item.png"} />
                 <h2 className="text-3xl font-bold text-gray-800 mb-4">
