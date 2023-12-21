@@ -25,6 +25,7 @@ export const ROUTES = {
 
   BaoHiem: '/bao-hiem',
   BaoHiemChiTiet: `/bao-hiem/:productId`,
+  BaoHiemDangKy: '/bao-hiem/:productId/register',
 
   BaoHiemTaiNan: '/bao-hiem/tai-nan',
   BaoHiemTuVongVaThuongTat: '/bao-hiem/tu-vong-va-thuong-tat',
@@ -69,5 +70,6 @@ export const ROUTES = {
 
   MyInsurance: '/my-insurance',
   Profile: '/profile',
-  Product: '/product/:productId',
+
+
 }

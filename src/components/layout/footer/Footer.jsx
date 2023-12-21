@@ -31,8 +31,8 @@ const footerItems = [
     contents: [
       { title: "Giải quyết quyền lợi bảo hiểm", path: "giai-quyet-quyen-loi-bao-hiem" },
       { title: "Kênh thanh toán phí bảo hiểm", path: "kenh-thanh-toan-phi-bao-hiem" },
-      { title: "PRUOnline – Cổng thông tin khách hàng", path: "pruonline-cong-thong-tin-khach-hang" },
-      { title: "PRURewards – Đổi điểm nhận quà", path: "prurewards-doi-diem-nhan-qua" },
+      { title: "PROOnline – Cổng thông tin khách hàng", path: "proonline-cong-thong-tin-khach-hang" },
+      { title: "ProRewards – Đổi điểm nhận quà", path: "prorewards-doi-diem-nhan-qua" },
       { title: "Thông tin & ưu đãi dịch vụ", path: "thong-tin-uu-dai-dich-vu" }
     ]
   },
@@ -41,7 +41,7 @@ const footerItems = [
     contents: [
       { title: "Cơ hội nghề nghiệp tại Protector", path: "co-hoi-nghe-nghiep-tai-protector" },
       { title: "Cơ hội phát triển tại kênh hợp tác kinh doanh", path: "co-hoi-phat-trien-tai-kenh-hop-tac-kinh-doanh" },
-      { title: "PRUPlanner – Chuyên viên hoạch định tài chính", path: "pruplanner-chuyen-vien-hoach-dinh-tai-chinh" },
+      { title: "ProPlanner – Chuyên viên hoạch định tài chính", path: "proplanner-chuyen-vien-hoach-dinh-tai-chinh" },
       { title: "Chuyên viên hoạch định tài chính Protector - Kênh đại lý", path: "chuyen-vien-hoach-dinh-tai-chinh-protector-kenh-dai-ly" }
     ]
   },
