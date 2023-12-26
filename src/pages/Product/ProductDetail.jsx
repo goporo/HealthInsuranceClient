@@ -1,5 +1,4 @@
 import ButtonZoomShadow from 'components/animation/ButtonZoomShadow'
-import UiButton from 'components/common/ui/UiButton/UiButton'
 import UiImage from 'components/common/ui/UiImage/UiImage'
 import UiLi from 'components/common/ui/UiLi/UiLi'
 import UiModal from 'components/common/ui/UiModal/UiModal'
@@ -8,7 +7,23 @@ import NotFound from 'pages/404/NotFound'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getProductDetailRequest } from 'requests/product.request'
-import { ROUTES } from 'routes/RouterConfig'
+
+
+const cardItems = [
+  {
+    img: '/assets/images/banner/minh-hoa-benh-vien-dieu-tri-01-366x206.jpg',
+    title: 'Chi trả lên đến 250% số tiền bảo hiểm cho 99 bệnh lý nghiêm trọng khác nhau'
+  },
+  {
+    img: '/assets/images/banner/minh-hoa-tai-nan-tu-vong-01-366x206.jpg',
+    title: 'Quyền lợi đặc biệt cho 03 nhóm bệnh lý nghiêm trọng phổ biến'
+  },
+  {
+    img: '/assets/images/banner/minh-hoa-chi-tra-nhan-tien-hoan-phi-03-366x206.jpg',
+    title: 'Cân đối và chủ động xây dựng kế hoạch tài chính cho nhiều nhu cầu'
+  },
+
+]
 
 const ProductDetail = () => {
   const [response, setResponse] = useState([])
@@ -121,18 +136,38 @@ const ProductDetail = () => {
       {!fetchLoading ? (
         <div className="m-8 p-12 overflow-hidden">
           <div className='flex flex-row gap-8'>
-            <div className='flex flex-col min-w-[450px]'>
-              <div className="relative w-[391px]">
+            <div className='flex flex-col w-[450px] px-5'>
+              <div className="relative">
                 <div className='text-[20px] font-bold'>Sản phẩm bảo hiểm nhân thọ mới nhất</div>
                 <div className='w-full h-[2px] bg-[#68737a] opacity-30 absolute -bottom-1'></div>
               </div>
               <div className='text-[18px] mt-12'>Sản phẩm bảo hiểm
               </div>
-              <h1 className='text-[24px]'>{response?.productName}</h1>
+              <h1 className='text-[36px]'>{response?.productName}</h1>
               <p className='mt-6'>Chọn chuẩn chất riêng</p>
             </div>
 
-            <UiImage width={766} height={432} src={'https://www.prudential.com.vn/export/sites/prudential-vn/vi/.thu-vien/hinh-anh/san-pham-bao-hiem-nhan-tho/ke-hoach-bao-ve/pru-nang-dong-766x432.png'} />
+            <UiImage width={766} height={432} src={'/assets/images/banner/sp-pru-bao-ve-toi-uu-hero-766x432.jpg'} />
+          </div>
+
+          <div>
+            <h1 className='text-[48px]'>Vì sao chọn?</h1>
+            <div className="grid grid-cols-3 mt-8 justify-items-center">
+              {cardItems.map((item, index) => (
+                <div key={index} className='relative w-[366px] h-[408px] overflow-hidden  bg-white shadow-lg rounded-lg'>
+                  <div className='w-[366px] h-[206px]'>
+                    <UiImage src={item.img} alt="logo" width={366} height={206} />
+                  </div>
+                  <div className='p-[30px] pb-[52px] '>
+                    <h1 className='text-[24px] overflow-hidden line-clamp-4 max-h-[192px]'>{item.title}</h1>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className='flex justify-center my-32'>
+            <UiImage src={'/assets/images/banner/sp-pru-bao-ve-toi-uu-video-966x543.jpg'} alt="logo" width={966} height={544} />
           </div>
 
           <div className='w-[1000px] px-4 m-auto mt-16'>
@@ -144,10 +179,10 @@ const ProductDetail = () => {
           </div>
 
           <div>
-            <h1 className='text-[48px] mt-16'>Chi tiết sản phẩm</h1>
+            <h1 className='text-[48px] mt-20'>Chi tiết sản phẩm</h1>
             <div className="bg-white shadow-sm m-8 p-12 rounded-lg">
               <h1>Quyền lợi của sản phẩm</h1>
-              <div className='mt-8 flex flex-col gap-4'>
+              <div className='mt-16 flex flex-col gap-4'>
                 {
                   response?.rights?.map((item, index) => {
                     return (
@@ -180,3 +215,7 @@ const ProductDetail = () => {
 }
 
 export default ProductDetail
+
+
+
+
