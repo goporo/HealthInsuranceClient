@@ -125,7 +125,6 @@ const Login = () => {
             </p>
           )}
         </div>
-
         <div className="flex justify-center flex-row">
           {onLoadingSubmit ? (
             <UiSpinning></UiSpinning>

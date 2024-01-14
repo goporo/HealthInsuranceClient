@@ -13,6 +13,11 @@ export const getProductsRequest = () => api.get('/product/')
 
 export const getProductDetailRequest = (data) => api.get(`/product/${data.id}`)
 
+export const getProductPrice = (id, data) => api.post(`/product/${id}/price`, data)
+
+export const purchaseProduct = (id, data) => api.post(`/product/${id}/purchase`, data)
+
+
 // export const deleteProductDetailsRequest = (
 //   id: string
 // ): ApiResponse<GetProductDetailResponse> => api.delete(`/Products/${id}`);

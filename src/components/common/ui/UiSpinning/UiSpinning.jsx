@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge'
 
 const UiSpinning = ({ wrapClassName = '', spinningClassName = '' }) => {
   return (
-    <div className={twMerge('text-center', wrapClassName)}>
+    <div className={twMerge('text-center my-4', wrapClassName)}>
       <svg
         role="status"
         className={twMerge(
