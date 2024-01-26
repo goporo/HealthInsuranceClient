@@ -43,7 +43,7 @@ const Login = () => {
       setOnLoadingSubmit(true)
 
       // Send login request to your backend API
-      const response = await api.post('/authentication/login', data)
+      const response = await api.post('/authentication/login/customer', data)
 
       if (response.status !== 200) {
         throw new Error('Login failed')

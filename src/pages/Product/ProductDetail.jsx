@@ -6,6 +6,8 @@ import NotFound from 'pages/404/NotFound'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getProductDetailRequest } from 'requests/product.request'
+import { ROUTES } from 'routes/RouterConfig'
+import { LOCAL_STORAGE } from 'utils/storageConstants'
 
 
 const cardItems = [
@@ -39,10 +41,13 @@ const ProductDetail = () => {
       setFetchLoading(true)
       try {
         const fetchResult = await getProductDetailRequest({
-          id: productId,
+          // id: productId,
+          id: 1,
         })
         const data = fetchResult?.data
         setResponse(data)
+        console.log(data);
+
       } catch (error) {
         console.log(error)
         setFetchError(true)
@@ -132,7 +137,9 @@ const ProductDetail = () => {
           <div className="flex justify-center flex-row mt-12">
             <ButtonZoomShadow
               onClick={() => {
-                navigate(`/bao-hiem/${productId}/register`)
+                if (!localStorage.getItem(LOCAL_STORAGE.ACCOUNT_ID)) navigate(ROUTES.Login)
+                else
+                  navigate(`${ROUTES.BaoHiemDangKy}/${productId}`)
               }}
               className='text-[18px] h-[52px]'
             >

@@ -17,7 +17,7 @@ import { ROUTES } from '../../../routes/RouterConfig'
 import SideBar from '../side-bar/SideBar'
 import UiButton from 'components/common/ui/UiButton/UiButton'
 import { twMerge } from 'tailwind-merge'
-import useScrollReset from 'hooks/useScrollReset'
+import { LOCAL_STORAGE } from 'utils/storageConstants'
 
 const Header = () => {
   const navigate = useNavigate()
@@ -25,7 +25,6 @@ const Header = () => {
   const dispatch = useDispatch()
   const [isScrollAtTop, setIsScrollAtTop] = useState(true)
 
-  useScrollReset();
 
 
   useEffect(() => {
@@ -96,7 +95,8 @@ const Header = () => {
                     navigate(ROUTES.Login)
                   }}
                 >
-                  {'Đăng nhập'}
+
+                  {localStorage.getItem(LOCAL_STORAGE.ACCOUNT_ID) ? 'Đăng xuất' : 'Đăng nhập'}
                 </UiButton>
               ) : (
                 <UiButton

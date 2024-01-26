@@ -7,6 +7,7 @@ const authService = {
 
     // auto remember
     localStorage.setItem(LOCAL_STORAGE.REMEMBER_ME, true)
+    localStorage.setItem(LOCAL_STORAGE.ACCOUNT_ID, user.accountID)
 
     dispatch(loginSuccess())
   },

@@ -40,7 +40,6 @@ const ProductList = () => {
         })
         const data = fetchResult?.data
         setResponse(data)
-        console.log(data);
       } catch (error) {
         console.log(error)
         setFetchError(true)
@@ -60,6 +59,7 @@ const ProductList = () => {
 
   return (
     <>
+
       <div className='flex flex-col pb-[100px] pt-[50px] w-[1300px] px-[17px]'>
         <div className='flex flex-row justify-end'>
           <div className='max-w-[483px] mr-16'>

@@ -10,14 +10,18 @@ import UiImage from 'components/common/ui/UiImage/UiImage'
 import UiModal from 'components/common/ui/UiModal/UiModal'
 import UiSpinning from 'components/common/ui/UiSpinning/UiSpinning'
 import api from 'config/axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
-import { useNavigate, useParams } from 'react-router-dom'
+import useFormPersist from 'react-hook-form-persist'
+import { Routes, useNavigate, useParams } from 'react-router-dom'
+import { getPaymentRequest } from 'requests/payment.request'
 import { getProductPrice, purchaseProduct } from 'requests/product.request'
+import { ROUTES } from 'routes/RouterConfig'
 import formatMoneyToVND from 'utils/moneyFormatter'
+import { LOCAL_STORAGE } from 'utils/storageConstants'
 
 const sampleData = {
-  "accountID": 1,
+  "accountID": localStorage.getItem(LOCAL_STORAGE.ACCOUNT_ID),
   "paymentPeriod": "Mỗi Tháng",
   "customerInfo": {
     "citizenldenficication": "string",
@@ -54,6 +58,9 @@ const ProductRegister = () => {
   const [errorMessage, setErrorMessage] = useState(null)
   const [productPrice, SetProductPrice] = useState(null)
   const [isModalVisible, setIsModalVisible] = useState(false)
+  const [paymentLink, setPaymentLink] = useState(ROUTES.Home)
+  const [contractId, setContractId] = useState(2);
+  const [transactionId, setTransactionId] = useState(2);
 
 
   const { productId } = useParams()
@@ -62,9 +69,12 @@ const ProductRegister = () => {
   const {
     register,
     handleSubmit,
-    formState,
-    control
+    control,
+    watch,
+    setValue,
   } = useForm()
+
+  useFormPersist('form-product-register', { watch, setValue });
 
   const onSubmit = async (data) => {
     try {
@@ -89,20 +99,29 @@ const ProductRegister = () => {
         if (result) setIsModalVisible(true);
         console.log(result);
 
+        setContractId(result?.aaa);
+        setTransactionId(result?.bbb);
+        setPaymentLink(result?.data)
       }
 
     } catch (error) {
-      console.error('Login failed', error)
-      if (error.data) {
-        // Update the state with the error message from the backend
-        setErrorMessage(error.data || 'Login failed')
-      } else {
-        setErrorMessage('Invalid Username or Password!')
-      }
+      console.error(error)
 
     } finally {
       setOnLoadingSubmit(false)
     }
+  }
+
+
+
+
+  const GoToPayment = async () => {
+
+    const response = await getPaymentRequest(contractId, transactionId)
+    const url = response?.data
+    setPaymentLink(url)
+
+    window.location.href = url;
   }
   const handleCloseModal = () => {
     setIsModalVisible(false)
@@ -118,8 +137,9 @@ const ProductRegister = () => {
         cancelClassName='hidden'
         confirmClassName='hidden'
         headerClassName='!hidden'
+        footerClassName='!p-3'
       >
-        <div className="flex items-center flex-col -mb-4 gap-y-6">
+        <div className="flex items-center flex-col pb-0 mb-4 gap-y-6">
           <h1>
             Cảm ơn bạn đã tin dùng Protector!
           </h1>
@@ -128,8 +148,8 @@ const ProductRegister = () => {
 
           <div className='mt-5'>
             <UiButton
-              onClick={() => navigate(-1)}
-              className='bg-primary text-[14px] text-white rounded-full py-3 px-12 w-[150px] hover:bg-red-700'>Trở về trang chủ</UiButton>
+              type="button" onClick={GoToPayment}
+              className='bg-primary text-[14px] text-white rounded-full py-3 px-12 w-[180px] hover:bg-red-700 cursor-pointer'>Thanh toán ngay</UiButton>
           </div>
         </div>
       </UiModal>
@@ -175,14 +195,14 @@ const ProductRegister = () => {
                   defaultValue={''}
                   placeholder={'Vui lòng nhập Số CMND/CCCD'}
                   label={'Số CMND/CCCD'}
-                  {...register('fullName')}
+                  {...register('r1')}
                 />
                 <TextInput
                   required
                   defaultValue={''}
                   placeholder={'Vui lòng nhập họ tên'}
                   label={'Họ tên'}
-                  {...register('fullName')}
+                  {...register('r2')}
                 />
 
               </div>
@@ -192,14 +212,14 @@ const ProductRegister = () => {
                   defaultValue={''}
                   placeholder={'Vui lòng nhập số điện thoại'}
                   label={'Số điện thoại'}
-                  {...register('fullName')}
+                  {...register('r3')}
                 />
                 <TextInput
                   required
                   defaultValue={''}
                   placeholder={'Nhập email'}
                   label={'Email '}
-                  {...register('fullName')}
+                  {...register('r4')}
                 />
 
               </div>
@@ -210,14 +230,14 @@ const ProductRegister = () => {
                   defaultValue={''}
                   placeholder={'Vui lòng nhập địa chỉ'}
                   label={'Hộ khẩu thường trú'}
-                  {...register('fullName')}
+                  {...register('r5')}
                 />
                 <TextInput
                   required
                   defaultValue={''}
                   placeholder={'Nhập Thành Phố'}
                   label={'Thành Phố/Tỉnh'}
-                  {...register('fullName')}
+                  {...register('r6')}
                 />
               </div>
               <h3 className='mt-8'>Địa chỉ tại nước ngoài (nếu có)</h3>
@@ -226,7 +246,7 @@ const ProductRegister = () => {
                   defaultValue={''}
                   placeholder={'Vui lòng nhập địa chỉ'}
                   label={'Địa chỉ'}
-                  {...register('fullName')}
+                  {...register('r7')}
                 />
               </div>
               <Controller

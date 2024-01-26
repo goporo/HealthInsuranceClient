@@ -18,6 +18,8 @@ import { ScrollRestoration } from "react-router-dom";
 import About from 'pages/About/About'
 import CoHoiNgheNghiep from 'pages/CoHoiNgheNghiep/CoHoiNgheNghiep'
 import ProductRegister from 'pages/Product/ProductRegister'
+import Payment from 'pages/Payment/Payment'
+import Application from 'pages/Application/Application'
 
 
 
@@ -49,9 +51,15 @@ export const router = createBrowserRouter(
 
 
         <Route path={ROUTES.BaoHiemChiTiet} element={<ProductDetail />} />
-        <Route path={ROUTES.BaoHiemDangKy} element={<ProductRegister />} />
+        <Route path={ROUTES.BaoHiemDangKyForm} element={<ProductRegister />} />
+
+        <Route path={ROUTES.Application} element={<Application />} />
+
+
 
       </Route>
+
+      <Route path={ROUTES.Payment} element={<Payment />} />
 
     </Route>
 

@@ -5,7 +5,6 @@ import { latestBlogs } from './latestBlogs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { twMerge } from 'tailwind-merge';
-import useScrollReset from 'hooks/useScrollReset'
 
 const BlogWrapper = ({ children }) => {
     const [startSliceIndex, setStartSliceIndex] = useState(0);

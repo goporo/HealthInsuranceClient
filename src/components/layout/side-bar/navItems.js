@@ -57,35 +57,35 @@ export const navItems = [
     icon: null,
     items: [
       {
-        path: ROUTES.CSKHGiaiQuyetQuyenLoiBaoHiem,
+        path: ROUTES.Application,
         title: 'Giải quyết quyền lợi bảo hiểm',
       },
       {
-        path: ROUTES.CSKHKenhThanhToanPhiBaoHiem,
+        path: ROUTES.Application,
         title: 'Kênh thanh toán phí bảo hiểm',
       },
       {
-        path: ROUTES.CSKHPROOnlineCongThongTin,
+        path: ROUTES.Application,
         title: 'PROOnline - Cổng thông tin khách hàng',
       },
       {
-        path: ROUTES.CSKHPRORewardDoiDiemNhanQua,
+        path: ROUTES.Application,
         title: 'PRURewards - Đổi điểm nhận quà',
       },
       {
-        path: ROUTES.CSKHThongTinUuDaiVaDichVu,
+        path: ROUTES.Application,
         title: 'Thông tin & ưu đãi dịch vụ',
       },
       {
-        path: ROUTES.CSKHTaiLieuVaBieuMauThamKhao,
+        path: ROUTES.Application,
         title: 'Tài liệu và biểu mẫu tham khảo',
       },
       {
-        path: ROUTES.CSKHChuongTrinhKhuyenMai,
+        path: ROUTES.Application,
         title: 'Chương trình khuyến mại nổi bật',
       },
       {
-        path: ROUTES.CSKHThucHienQuyenCuaChuThe,
+        path: ROUTES.Application,
         title: 'Thực hiện quyền của chủ thể dữ liệu',
       },
     ],
