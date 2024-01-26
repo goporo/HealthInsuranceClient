@@ -3,11 +3,21 @@
 const config = {
     verbose: true,
     moduleNameMapper: {
-        // Handle module aliases (this will be automatically configured for you soon)
-        '^src/(.*)$': '<rootDir>/src/$1',
+        "\\.(css|less|sass|scss)$": "identity-obj-proxy",
+        '^components/(.*)$': '<rootDir>/src/components/$1',
         '^public/(.*)$': '<rootDir>/public/$1',
+        '^src/(.*)$': '<rootDir>/src/$1',
+        "^routes/(.*)$": "<rootDir>/src/routes/$1",
+        "^utils/(.*)$": "<rootDir>/src/utils/$1",
+        "^pages/(.*)$": "<rootDir>/src/pages/$1",
+        "^hooks/(.*)$": "<rootDir>/src/hooks/$1",
+        "^requests/(.*)$": "<rootDir>/src/requests/$1",
+        "^services/(.*)$": "<rootDir>/src/services/$1",
+        "^config/(.*)$": "<rootDir>/src/config/$1",
+
+
+
     },
-    setupFilesAfterEnv: ['./jest.setup.js'],
     clearMocks: true,
     collectCoverage: true,
     collectCoverageFrom: [

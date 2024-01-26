@@ -3,12 +3,10 @@ import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import AuthWrapper from './AuthWrapper'
-import { jwtDecode } from 'jwt-decode'
 import authService from '../../services/authService'
 import { ROUTES } from '../../routes/RouterConfig'
 import api from '../../config/axios'
 import UiSpinning from 'components/common/ui/UiSpinning/UiSpinning'
-import UiButton from 'components/common/ui/UiButton/UiButton'
 import ButtonZoomShadow from 'components/animation/ButtonZoomShadow'
 
 const Login = () => {
@@ -23,19 +21,18 @@ const Login = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const isAccessTokenValid = (accessToken) => {
-    if (!accessToken) return false
-    const decoded = jwtDecode(accessToken)
-    const currentTime = Date.now() / 1000
-    // error here - exp is undefined
-    const expiresTime = decoded?.exp || 0
+  // const isAccessTokenValid = (accessToken) => {
+  //   if (!accessToken) return false
+  //   const decoded = jwtDecode(accessToken)
+  //   const currentTime = Date.now() / 1000
+  //   const expiresTime = decoded?.exp || 0
 
-    if (expiresTime < currentTime) {
-      return true
-    }
+  //   if (expiresTime < currentTime) {
+  //     return true
+  //   }
 
-    return true
-  }
+  //   return true
+  // }
 
   const onSubmit = async (data) => {
     try {

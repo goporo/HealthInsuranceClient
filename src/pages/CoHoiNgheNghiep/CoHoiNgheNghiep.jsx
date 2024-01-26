@@ -1,8 +1,7 @@
 import WipeImage from 'components/animation/WipeImage'
 import UiImage from 'components/common/ui/UiImage/UiImage'
 import React from 'react'
-import { motion, useAnimation } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import ButtonZoomShadow from 'components/animation/ButtonZoomShadow'
 
 const lyDoTonTai = [

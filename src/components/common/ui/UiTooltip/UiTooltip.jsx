@@ -1,4 +1,4 @@
-import 'tippy.js/dist/tippy.css'; // optional
+// import 'tippy.js/dist/tippy.css'; 
 import React from 'react'
 import { twMerge } from 'tailwind-merge'
 import Tippy from '@tippyjs/react';

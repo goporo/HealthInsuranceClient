@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { motion, AnimatePresence, useAnimation } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 
 import authService from '../../../services/authService'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faBagShopping,
-  faCartShopping,
   faMagnifyingGlass,
   faPhone,
-  faRightFromBracket,
-  faUser,
 } from '@fortawesome/free-solid-svg-icons'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'

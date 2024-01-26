@@ -1,6 +1,6 @@
 // Router.js
 import React from 'react'
-import { Route, Routes, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
+import { Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import Home from '../pages/Home/Home'
 import { ROUTES } from './RouterConfig'
 import Login from '../pages/Auth/Login'
@@ -14,7 +14,6 @@ import BlogList from 'pages/blog/BlogList'
 import QuyTrinhBoiThuong from 'pages/blog/BaiVietNoiBat/QuyTrinhBoiThuong'
 import CacDieuKhoanLoaiTru from 'pages/blog/BaiVietNoiBat/CacDieuKhoanLoaiTru'
 import ProductList from 'components/section/product/ProductList'
-import { ScrollRestoration } from "react-router-dom";
 import About from 'pages/About/About'
 import CoHoiNgheNghiep from 'pages/CoHoiNgheNghiep/CoHoiNgheNghiep'
 import ProductRegister from 'pages/Product/ProductRegister'

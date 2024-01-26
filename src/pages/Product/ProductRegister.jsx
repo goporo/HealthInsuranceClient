@@ -1,4 +1,3 @@
-import ButtonZoomShadow from 'components/animation/ButtonZoomShadow'
 import GroupRadioInput from 'components/common/input/GroupRadioInput'
 import TextInput from 'components/common/input/TextInput'
 import SVGStep1 from 'components/common/svg/SVGStep1'
@@ -9,11 +8,10 @@ import UiButton from 'components/common/ui/UiButton/UiButton'
 import UiImage from 'components/common/ui/UiImage/UiImage'
 import UiModal from 'components/common/ui/UiModal/UiModal'
 import UiSpinning from 'components/common/ui/UiSpinning/UiSpinning'
-import api from 'config/axios'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import useFormPersist from 'react-hook-form-persist'
-import { Routes, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { getPaymentRequest } from 'requests/payment.request'
 import { getProductPrice, purchaseProduct } from 'requests/product.request'
 import { ROUTES } from 'routes/RouterConfig'
@@ -55,7 +53,6 @@ const sampleData = {
 
 const ProductRegister = () => {
   const [onLoadingSubmit, setOnLoadingSubmit] = useState(false)
-  const [errorMessage, setErrorMessage] = useState(null)
   const [productPrice, SetProductPrice] = useState(null)
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [paymentLink, setPaymentLink] = useState(ROUTES.Home)
@@ -76,7 +73,7 @@ const ProductRegister = () => {
 
   useFormPersist('form-product-register', { watch, setValue });
 
-  const onSubmit = async (data) => {
+  const onSubmit = async () => {
     try {
       if (onLoadingSubmit) return
       setOnLoadingSubmit(true)

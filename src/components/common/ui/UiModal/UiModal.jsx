@@ -3,8 +3,6 @@ import React from 'react'
 import UiSpinning from '../UiSpinning/UiSpinning'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faRightFromBracket,
-  faUser,
   faX,
 } from '@fortawesome/free-solid-svg-icons'
 import { twMerge } from 'tailwind-merge'

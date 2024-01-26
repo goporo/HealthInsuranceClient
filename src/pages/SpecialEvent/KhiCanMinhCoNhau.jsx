@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { getProductsRequest } from 'requests/product.request'
 import WipeImage from 'components/animation/WipeImage'
-import UiSpinning from 'components/common/ui/UiSpinning/UiSpinning'
 import UiImage from 'components/common/ui/UiImage/UiImage'
-import { motion, useAnimation } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight, faPlay } from '@fortawesome/free-solid-svg-icons'
+import { faPlay } from '@fortawesome/free-solid-svg-icons'
 
 const KhiCanMinhCoNhau = () => {
     const [response, setResponse] = useState([])

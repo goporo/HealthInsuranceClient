@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import WipeImage from 'components/animation/WipeImage'
 import UiImage from 'components/common/ui/UiImage/UiImage'
-import { motion, useAnimation } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 
